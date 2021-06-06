@@ -1,0 +1,254 @@
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+  perspective: 1000px;
+  padding: 0 40px 0 40px;
+}
+.game__card-container-wrapper {
+  /* padding:0 130px; */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card {
+  cursor: pointer;
+  margin: 10px;
+  height: 0;
+  position: relative;
+}
+.card-container--12 {
+  max-width: 750px;
+}
+.card-container--18 {
+  max-width: 1200px;
+}
+.card-container--24 {
+  max-width: 880px;
+}
+.card-container--36 {
+  max-width: 1300px;
+}
+/* 1.48 */
+.card-container--12 > .card {
+  padding-top: calc(37% - 20px);
+  width: calc(25% - 20px);
+}
+.card-container--18 > .card {
+  padding-top: calc(24.666% - 20px);
+  width: calc(16.666% - 20px);
+}
+.card-container--24 > .card {
+  padding-top: calc(24.666% - 20px);
+  width: calc(16.666% - 20px);
+}
+.card-container--36 > .card {
+  padding-top: calc(16.444% - 20px);
+  width: calc(11.111% - 20px);
+}
+
+.card,
+.card__photo,
+.card__back {
+  transition: 500ms linear;
+  border-radius: 6%;
+}
+.card:active {
+  transform: scale(0.95);
+}
+.card__photo,
+.card__back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.card__photo {
+  transform: rotateY(-180deg);
+}
+.card__back {
+  transform: rotateY(0deg);
+}
+.choosed {
+  transform: rotateY(0deg);
+}
+.flip {
+  transform: rotateY(180deg);
+}
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+.game__player-counter {
+  font-size: 50px;
+  font-family: var(--main-font);
+  color: #fff;
+  font-weight: 600;
+  position: fixed;
+  z-index: 4;
+  transition: 400ms linear;
+}
+.game__player-counter--1 {
+  top: 40px;
+  left: 40px;
+}
+.game__player-counter--2 {
+  top: 40px;
+  right: 40px;
+}
+.game__player-counter--3 {
+  bottom: 40px;
+  left: 40px;
+}
+.game__player-counter--4 {
+  bottom: 40px;
+  right: 40px;
+}
+.game__player-counter--current {
+  transform: scale(1.4);
+  color: var(--main-yellow);
+}
+.game {
+  position: relative;
+}
+.timer {
+  position: fixed;
+  top: 50px;
+  right: 40px;
+}
+
+.timer__inner {
+  display: inline-block;
+  font-size: 40px;
+  color: #fff;
+  font-weight: 600;
+  font-family: var(--main-font);
+}
+.game__player-turn {
+  cursor: pointer;
+  font-family: var(--main-font);
+  font-weight: 600;
+  font-size: 60px;
+  position: absolute;
+  padding: 20px;
+  border-radius: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 300ms linear;
+  z-index: 10;
+  display: inline-block;
+  background-color: #fff;
+}
+
+.game__congratulation {
+  width: 100%;
+  min-height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.8;
+  z-index: 1;
+  background-image: url(../img/congratulation.gif);
+}
+.game__start-number {
+  /* transform: scale(0.1); */
+  font-size: 150px;
+  position: absolute;
+  transform: translate(-50%, -50%) scale(0.8);
+  color: #fff;
+  font-family: var(--main-font);
+  background-color: var(--main-yellow);
+  font-weight: 800;
+  transition: 500ms linear;
+  display: block;
+  text-align: center;
+  min-width: 200px;
+  padding: 20px;
+  border-radius: 20px;
+}
+.game__start-number-wrapper {
+  z-index: 2;
+  transition: 400ms linear;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.scaled {
+  transform: scale(5);
+  transition: 300ms linear;
+}
+.scaled-number{
+  /* opacity: 0.5; */
+  transform: scale(0.05);
+  transition: 500ms linear;
+  transform: translate(-50%, -50%);
+}
+@media screen and (max-height: 835px) {
+  .card-container--12 {
+    max-width: 600px;
+  }
+  .card-container--18 {
+    max-width: 900px;
+  }
+  .card-container--24 {
+    max-width: 680px;
+  }
+  .card-container--36 {
+    max-width: 1000px;
+  }
+}
+@media screen and (max-height: 670px) {
+  .card-container--12 {
+    max-width: 500px;
+  }
+  .card-container--18 {
+    max-width: 750px;
+  }
+  .card-container--24 {
+    max-width: 562px;
+  }
+  .card-container--36 {
+    max-width: 845px;
+  }
+}
+@media screen and (max-height: 555px) {
+  .card-container--12 {
+    max-width: 400px;
+  }
+  .card-container--18 {
+    max-width: 600px;
+  }
+  .card-container--24 {
+    max-width: 450px;
+  }
+  .card-container--36 {
+    max-width: 680px;
+  }
+}
+@media screen and (max-height: 445px) {
+  .card-container--12 {
+    max-width: 350px;
+  }
+  .card-container--18 {
+    max-width: 500px;
+  }
+  .card-container--24 {
+    max-width: 400px;
+  }
+  .card-container--36 {
+    max-width: 550px;
+  }
+}
+/* @media screen  and (max-width:900px) {
+  .game__card-container-wrapper {
+  padding:0 30px;
+}
+} */

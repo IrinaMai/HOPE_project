@@ -1,0 +1,128 @@
+.win {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  width: 90%;
+}
+
+.win__img {
+  width: 100%;
+  max-width: 580px;
+  /* display: block; */
+}
+.win__headline {
+  margin-bottom: 80px;
+  font-size: 45px;
+  color: #fff;
+  font-family: var(--main-font);
+  font-weight: 600;
+}
+.win__open-modal {
+  margin-bottom: 60px;
+  font-weight: 700;
+  font-family: var(--main-font);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-shadow: 5px 10px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  border: 5px solid #ffffff;
+}
+.win__open-modal:active {
+  box-shadow: 5px 5px rgba(0, 0, 0, 0.25);
+  top: 5px;
+}
+.win__btn {
+  transform: skew(-10deg);
+  background-color: var(--main-yellow);
+  display: block;
+  width: 350px;
+  height: 144px;
+  border-radius: 7px;
+}
+.win__btn:active {
+  outline: none;
+  transform: skew(-10deg);
+}
+.win__btn-text {
+  display: block;
+  transform: skew(10deg);
+  font-size: 40px;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-weight: 800;
+}
+.win__content-wrapper {
+  padding-top: 70px;
+}
+.win__arcade{
+  max-width: 880px;
+  background-image: url(../img/bd_winner-arcade.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 390px 20px 20px 20px;
+  border-radius: 15px;
+  border-bottom: 5px solid var(--main-blue);
+}
+.win__btn--arcade{
+  /* height: 130px;
+  width: 350px; */
+  background-color: var(--main-blue);
+opacity: 0.75;
+margin-bottom: 0;
+}
+.win__btn--arcade:active{
+  opacity: 1;
+}
+.win__arcade-wrapper{
+  /* position: absolute; */
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+@media screen and (min-width:1000px){
+  .win__btn {
+  width: 250px;
+  height: 100px;
+}.win__btn-text {
+  font-size: 28px;
+}
+.win__img {
+  max-width: 450px;
+}
+}
+@media screen and (max-width: 1000px) {
+  .win__btn {
+  width: 250px;
+  height: 100px;
+}
+.win__btn-text {
+  font-size: 28px;
+}
+.win__img {
+  max-width: 450px;
+}
+}@media screen and (max-width: 768px) {
+  .win__btn {
+  width: 170px;
+  height: 80px;
+}
+.win__btn-text {
+  font-size: 22px;
+}
+.win__img {
+  width: 100%;
+  max-width: 320px;
+}.win__headline{
+  font-size: 30px;
+}
+}
+@media screen and (max-width:550px){
+  .win__img {
+    display: none;
+  }
+  .win__content-wrapper{
+    margin: 0 auto;
+  }
+}

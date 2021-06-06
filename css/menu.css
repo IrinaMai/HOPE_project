@@ -1,0 +1,156 @@
+.settings {
+  width: 100%;
+}
+.settings__wrapper {
+  padding: 45px 0 65px;
+  background-color: var(--main-blue);
+  border-radius: 0 0 10px 10px;
+  border: 2px solid #ecc408;
+  border-top: none;
+}
+
+.settings__type-wrapper {
+  display: flex;
+  align-items: flex-start;
+}
+.settings__wrapper,
+.settings__type-wrapper {
+  max-width: 780px;
+  margin: 0 auto;
+}
+.settings__type {
+  transition: 200ms linear;
+  cursor: pointer;
+  position: relative;
+  top: 2px;
+  box-sizing: border-box;
+  width: 33.33333%;
+  height: 50px;
+  border-bottom: 50px solid var(--main-blue);
+  opacity: 0.6;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+}
+
+.game-type__text {
+  height: 0;
+  display: block;
+  position: relative;
+  z-index: 0;
+  padding-top: 11px;
+  font-size: 22px;
+  font-family: var(--main-font);
+  font-weight: 600;
+  color: #fff;
+}
+.settings__type--active {
+  opacity: 1;
+}
+.settings__type--active::before {
+  content: "";
+  top: 45px;
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--main-yellow);
+}
+.settings__btn {
+  position: relative;
+  transition: 100ms linear;
+  font-family: var(--main-font);
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 700;
+  width: 130px;
+  height: 50px;
+  background-color: var(--main-yellow);
+  color: #000;
+  box-shadow: var(--small-shadow);
+}
+.settings__wrappers {
+  display: flex;
+  margin: 0 auto 40px;
+  width: 85%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.settings__by-type {
+  transition: 100ms linear;
+}
+.settings__headline {
+  font-family: var(--main-font);
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  color: #fff;
+}
+
+.settings__start-btn {
+  margin-top: 25px;
+  position: relative;
+  font-family: var(--main-font);
+  width: 240px;
+  text-transform: uppercase;
+  font-size: 25px;
+  height: 60px;
+  border-radius: 10px;
+  font-weight: 800;
+  background-color: rgb(241, 148, 42);
+  box-shadow: var(--main-shadow);
+}
+.settings__start-btn:active {
+  box-shadow: 5px 5px rgba(0, 0, 0, 0.25);
+  top: 5px;
+}
+.settings__btn:active {
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.25);
+  top: 3px;
+}
+.arcade__btn {
+  height: 80px;
+  width: 80px;
+  margin-right: 10px;
+  margin-left: 10px;
+  font-size: 20px;
+}
+.arcade__btn-wrapper {
+  width: 100%;
+  max-width: 520px;
+  height: 240px;
+  align-items: center;
+  display: flex;
+  margin: 0 auto;
+}
+.arcade__btn--close {
+  background-color: #999;
+  top: 3px;
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.25);
+}
+.arcade__btn--close:active {
+  color: red;
+  transition: 200ms linear;
+  border: 3px solid red;
+}
+
+.arcade__btn--close:after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 3px;
+  right: 3px;
+  width: 20px;
+  height: 20px;
+  background: url(../img/lock-closed.svg);
+}
+.count-player__wrapper {
+  width: 65%;
+}
+.settings__btn--choosed {
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.25);
+  top: 3px;
+  background-color: rgb(53, 181, 255);
+}
+
+@media screen and (max-width: 768px) {
+}

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/styles.css" />
+  <link rel="shortcut icon" href="#" type="image/x-icon" />
+  <link rel="shortcut icon" href="./img/logo.ico" type="image/x-icon">
+  <title>Brawl Stars card game</title>
+</head>
+
+<body>
+  <main class="main">
+    <section class="start modal">
+      <div class="start__logo-wrapper"> <a target="_blank"
+          href="https://dmytrokolisnyk2.github.io/ubermensches_project/build/" class="start__link">
+          <picture>
+            <source srcset="./img/logo-big@1X.webp" type="image/webp"><img src="./img/logo-big@1X.png"
+              class="start__logo" alt="logo" />
+          </picture>
+        </a> </div>
+      <div class="start__controls-wrapper"> <button type="button"
+          class="start__author start__open-modal start__controls"> A </bu> <button class="start__btn start__open-modal"
+            type="button"> <span class="start__btn-text">play</span> </button><button type="button"
+            class="start__how-to-play            start__open-modal            start__controls">?</button> </div>
+    </section>
+    <section id="how-to-play" class="how-to-play modal hidden-modal">
+      <h2 class="how-to-play__headline">How To Play?</h2>
+      <div data-modal="how-to-play" class="how-to-play__close close-modal-btn">
+        <picture>
+          <source srcset="./img/Cansel-button@1X.webp" type="image/webp"><img src="./img/Cansel-button@1X.png"
+            alt="close_btn" />
+        </picture>
+      </div>
+      <div class="how-to-play__wrapper">
+        <p class="how-to-play__text"> First, click the "play" button. You will see a table where you need to select the
+          number of cards and time. If you are not playing alone, go to the next "multiplayer" function, it is next to
+          the "single player" function. You need to choose the number of cards and the number of players. Then click
+          "start". You see the cards on the screen. You must find two identical cards for the time you have chosen.</p>
+        <div class="how-to-play__photo-wrapper">
+          <picture>
+            <source srcset="./img/settings.webp" type="image/webp"><img src="./img/settings.png" alt="how-to-play-img"
+              class="how-to-play__img">
+          </picture>
+          <picture>
+            <source srcset="./img/gameplay.webp" type="image/webp"><img src="./img/gameplay.png" alt="how-to-play-img"
+              class="how-to-play__img">
+          </picture>
+        </div>
+      </div>
+    </section>
+    <section class="modal authors-modal hidden-modal" id="authors">
+      <div class="authors_content">
+        <div data-modal="authors" class="authors_close close-modal-btn">
+          <picture>
+            <source srcset="./img/Cansel-button@1X.webp" type="image/webp"><img src="./img/Cansel-button@1X.png"
+              alt="#">
+          </picture>
+        </div>
+        <h2 class="authors_title">authors of this game</h2>
+        <div class="authors_wrapper">
+          <div class="authors_card">
+            <picture>
+              <source srcset="./img/authors_Bogdan.webp" type="image/webp"><img class="authors_img"
+                src="./img/authors_Bogdan.png" alt="Bogdan">
+            </picture>
+            <h4 class="authors_name"> Bogdanchick </h4>
+            <p class="authors_text"> TeamLead </p>
+          </div>
+          <div class="authors_card">
+            <picture>
+              <source srcset="./img/authors_Mari.webp" type="image/webp"><img class="authors_img"
+                src="./img/authors_Mari.png" alt="Mari">
+            </picture>
+            <h4 class="authors_name"> Mariia Hrypych </h4>
+            <p class="authors_text">HR manager</p>
+          </div>
+          <div class="authors_card">
+            <picture>
+              <source srcset="./img/authors_Dmytro.webp" type="image/webp"><img class="authors_img"
+                src="./img/authors_Dmytro.png" alt="Dmytro">
+            </picture>
+            <h4 class="authors_name"> Kolisnyk Dmytro </h4>
+            <p class="authors_text"> Based in Chicago. I love playing tennis and loud music.</p>
+          </div>
+          <div class="authors_card">
+            <picture>
+              <source srcset="./img/authors_Oksana.webp" type="image/webp"><img class="authors_img"
+                src="./img/authors_Oksana.png" alt="Oksana">
+            </picture>
+            <h4 class="authors_name">Oksana</h4>
+            <p class="authors_text"> 12 years old. Live in Lviv. </p>
+          </div>
+        </div>
+      </div>
+      <div class="authors_footer"><a target="_blank" href="https://github.com/DmytroKolisnyk2/Brawl-Stars_card-game">
+          <picture>
+            <source srcset="./img/logo.ico" type="image/webp"><img class="authors-footer__img" src="./img/logo.ico"
+              alt="logo">
+          </picture>
+        </a>
+        <p class="authors_footer__text">© 2021 Bravissimo all rights reserved</p>
+      </div>
+    </section>
+    <section class="settings modal hidden-modal">
+      <div class="settings__type-wrapper">
+        <div data-type="singlePlayer" class="settings__type            settings__type--active"> <span
+            data-type="singlePlayer" class="game-type__text">Single player</span> </div>
+        <div data-type="multiPlayer" class="settings__type"> <span data-type="multiPlayer" class="game-type__text">Multi
+            player</span> </div>
+        <div data-type="arcade" class="settings__type"> <span data-type="arcade" class="game-type__text">Arcade</span>
+        </div>
+      </div>
+      <div class="settings__wrapper">
+        <div class="settings__by-type            settings__singlePlayer">
+          <div class="settings__count-cards">
+            <h2 class="settings__headline">Select the amount of cards</h2>
+            <div class="settings__wrappers count-cards__wrapper"> <button type="button"
+                class="settings__btn count-btn                  settings__btn--choosed"
+                data-count="12">12</button><button type="button" class="settings__btn count-btn" data-count="18">
+                18</button><button type="button" class="settings__btn                  count-btn" data-count="24">
+                24</button><button type="button" class="settings__btn count-btn" data-count="36"> 36 </button> </div>
+          </div>
+          <div class="settings__count-timer">
+            <h2 class="settings__headline">Select the amount of time</h2>
+            <div class="count-timer__wrapper settings__wrappers"> <button type="button"
+                class="settings__btn count-timer" data-count="30"> 0.5 min</button><button type="button"
+                class="settings__btn count-timer settings__btn--choosed" data-count="60"> 1 min</button><button
+                type="button" class="settings__btn count-timer" data-count="120"> 2 min</button><button type="button"
+                class="settings__btn count-timer" data-count="180"> 3 min </button> </div>
+          </div>
+        </div>
+        <div class="settings__by-type settings__multiPlayer hidden-modal">
+          <div class="settings__count-cards">
+            <h2 class="settings__headline">Select the amount of cards</h2>
+            <div class="count-cards__wrapper                settings__wrappers"> <button type="button"
+                class="settings__btn                  count-btn settings__btn--choosed"
+                data-count="12">12</button><button type="button" class="settings__btn count-btn" data-count="18">
+                18</button><button type="button" class="settings__btn                  count-btn" data-count="24">
+                24</button><button type="button" class="settings__btn count-btn" data-count="36"> 36 </button> </div>
+          </div>
+          <div class="settings__count-player">
+            <h2 class="settings__headline">Select the number of players</h2>
+            <div class="count-player__wrapper settings__wrappers"> <button type="button"
+                class="settings__btn count-timer                  settings__btn--choosed" data-count="2">
+                2</button><button type="button" class="settings__btn count-timer" data-count="3"> 3</button><button
+                type="button" class="settings__btn count-timer" data-count="4"> 4 </button> </div>
+          </div>
+        </div>
+        <div class="settings__by-type            settings__arcade hidden-modal">
+          <div class="settings__count-cards">
+            <h2 class="settings__headline">Select level</h2>
+            <div class="arcade__btn-wrapper settings__wrappers"> <button
+                class="settings__btn arcade__btn settings__btn--choosed">1</button> <button
+                class="settings__btn arcade__btn arcade__btn--close">2</button> <button
+                class="settings__btn arcade__btn arcade__btn--close">3</button> <button
+                class="settings__btn arcade__btn arcade__btn--close">4</button><button
+                class="settings__btn arcade__btn arcade__btn--close">5</button><button
+                class="settings__btn arcade__btn arcade__btn--close">6</button><button
+                class="settings__btn arcade__btn arcade__btn--close">7</button><button
+                class="settings__btn arcade__btn arcade__btn--close">8</button><button
+                class="settings__btn arcade__btn arcade__btn--close">9</button><button
+                class="settings__btn arcade__btn arcade__btn--close">10</button> </div>
+          </div>
+        </div> <button type="button" class="settings__start-btn">start</button>
+      </div>
+    </section>
+    <div class="game__congratulation hidden"></div>
+    <section class="game        hidden-modal">
+      <!-- <div class="game__counters-wrapper"> -->
+      <div class="game__player-counter hidden game__player-counter--1">0</div>
+      <div class="game__player-counter hidden game__player-counter--2">0</div>
+      <div class="game__player-counter hidden game__player-counter--3">0</div>
+      <div class="game__player-counter hidden game__player-counter--4">0</div> <!-- </div> -->
+      <div class="game__start-number-wrapper hidden-modal"> <span class="game__start-number hidden-modal">3</span> <span
+          class="game__start-number hidden-modal">2</span> <span class="game__start-number hidden-modal">1</span> <span
+          class="game__start-number hidden-modal">GO!</span> </div>
+      <div class="game__player-turn hidden"></div>
+      <div class="game__card-container-wrapper">
+        <div class="card-container"></div>
+      </div>
+      <div class="timer hidden-modal">
+        <div class="timer__minutes            timer__inner">0</div> <span class="timer__inner">:</span>
+        <div class="timer__seconds timer__inner">00</div>
+      </div>
+    </section>
+    <section class="win modal hidden-modal">
+      <div class="win__content-wrapper">
+        <h2 class="win__headline">You WON!</h2> <button class="win__btn win__open-menu win__open-modal" type="button">
+          <span class="win__btn-text">Back to menu</span></button><button class="win__btn win__replay win__open-modal"
+          type="button"> <span class="win__btn-text">Replay</span> </button>
+      </div>
+      <picture>
+        <source srcset="./img/win@1X.webp" type="image/webp"><img class='win__img' src="./img/win@1X.png"
+          alt="win-image">
+      </picture>
+    </section>
+    <section class="win arcade modal hidden-modal">
+      <div class="win__content-wrapper">
+        <h2 class="win__headline win__headline-arcade">You </h2> <button class="win__btn win__open-menu win__open-modal"
+          type="button"> <span class="win__btn-text">Back to menu</span> </button><button
+          class="win__btn win__next-level win__open-modal" type="button"> <span class="win__btn-text">Next
+            level</span></button>
+      </div>
+      <picture>
+        <source srcset="./img/win@1X.webp" type="image/webp"><img class='win__img' src="./img/win@1X.png"
+          alt="win-image">
+      </picture>
+    </section>
+    <section class="win lose modal hidden-modal">
+      <div class="win__content-wrapper">
+        <h2 class="win__headline">You LOST</h2> <button class="win__btn win__open-menu win__open-modal" type="button">
+          <span class="win__btn-text">Back to menu</span></button><button class="win__btn win__replay win__open-modal"
+          type="button"> <span class="win__btn-text">Replay</span> </button>
+      </div>
+      <picture>
+        <source srcset="./img/lose@1X.webp" type="image/webp"> <img class='win__img' src="./img/lose@1X.png"
+          alt="win-image">
+      </picture>
+    </section>
+    <section class="win win__arcade modal hidden-modal">
+      <div class="win__arcade-wrapper"> <button class="win__btn win__btn--arcade win__open-menu win__open-modal"
+          type="button"> <span class="win__btn-text">Back to menu</span></button><button
+          class="win__btn win__btn--arcade win__replay win__open-modal" type="button"> <span
+            class="win__btn-text">Replay</span> </button> </div>
+    </section>
+  </main> <audio loop='loop' src="./music/main_theme.mp3" class="audio__main-theme"></audio> <audio loop='loop'
+    src="./music/gameplay.mp3" class="audio__game-play"></audio> <audio src="./music/won_sound.mp3"
+    class="audio__won"></audio> <audio src="./music/countdown.mp3" class="audio__countdown"></audio> <audio
+    src="./music/lose_sound.mp3" class="audio__lose"></audio> <audio src="./music/correct.mp3"
+    class="audio__correct"></audio> <audio src="./music/flip.mp3" class="audio__flip"></audio>
+  <script src="./js/script.js" type="module"></script>
+</body>
+
+</html>
