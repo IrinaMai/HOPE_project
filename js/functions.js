@@ -120,7 +120,8 @@ const gamePlay = (container, playerAmount, gameType, currentLevel) => {
       event.target.classList.add("flip");
       // flipRef.currentTime = 0;
       // flipRef.play();
-
+      console.log(even.target);
+      console.log(event.target.parentNode.nextElementSibling.lastElementChild);
       event.target.parentNode.nextElementSibling.lastElementChild.classList.add("choosed");
       if (state.position === 2) {
          if (state.ref === event.target) return;
