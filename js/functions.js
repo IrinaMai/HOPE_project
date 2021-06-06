@@ -76,6 +76,8 @@ const gamePlay = (container, playerAmount, gameType, currentLevel) => {
       event.target.classList.add("flip");
       // flipRef.currentTime = 0;
       // flipRef.play();
+      console.log(even.target);
+      console.log(event.target.parentNode.nextElementSibling.lastElementChild);
       event.target.parentNode.nextElementSibling.lastElementChild.classList.add("choosed");
       if (state.position === 2) {
          if (state.ref === event.target) return;
@@ -189,7 +191,6 @@ const gamePlay = (container, playerAmount, gameType, currentLevel) => {
 export const startGame = (cardsAmount, cards, containerRef, timerCount, playerAmount, gameType, currentLevel) => {
    if (gameType === "arcade") cardsAmount = level[currentLevel - 1].cardsAmount;
    containerRef.classList.add(`card-container--${cardsAmount}`);
-   console.log(`card-container--${cardsAmount}`);
    document.querySelector(".game").classList.remove("hidden-modal");
    drawCards(cardsAmount, cards, containerRef);
    const numbersRef = document.querySelector(".game__start-number-wrapper");
@@ -248,7 +249,6 @@ const endGame = (timerCount, cardsAmount, gameType, currentLevel) => {
    const containerRef = document.querySelector(".card-container");
    containerRef.removeEventListener("click", funcGlob.compareCardSingle);
    containerRef.classList.remove(`card-container--${cardsAmount}`);
-   console.log(`card-container--${cardsAmount}`);
    document.querySelector(".game").classList.add("hidden-modal");
    document.querySelector(".audio__game-play").pause();
    document.querySelector(".timer").classList.add("hidden-modal");
