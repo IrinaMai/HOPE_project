@@ -237,7 +237,6 @@ export const startGame = (cardsAmount, cards, containerRef, timerCount, playerAm
          timer(timerCount, minutesRef, secondsRef, cardsAmount);
       }
       document.querySelector(".audio__game-play").currentTime = 0;
-      document.querySelector(".audio__game-play").volume = 0.5;
       document.querySelector(".audio__game-play").play();
 
       gamePlay(containerRef, playerAmount, gameType, currentLevel);

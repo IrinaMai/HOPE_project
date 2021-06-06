@@ -14,13 +14,12 @@
 <body>
   <main class="main">
     <section class="start modal">
-      <div class="start__logo-wrapper"> <a target="_blank"
-          href="https://dmytrokolisnyk2.github.io/ubermensches_project/build/" class="start__link">
-          <picture>
-            <source srcset="./img/logo-big@1X.webp" type="image/webp"><img src="./img/logo-big@1X.png"
-              class="start__logo" alt="logo" />
-          </picture>
-        </a> </div>
+      <div class="start__logo-wrapper">
+        <picture>
+          <source srcset="./img/logo-big@1X.webp" type="image/webp"><img src="./img/logo-big@1X.png" class="start__logo"
+            alt="logo" />
+        </picture>
+      </div>
       <div class="start__controls-wrapper"> <button type="button"
           class="start__author start__open-modal start__controls"> A </bu> <button class="start__btn start__open-modal"
             type="button"> <span class="start__btn-text">play</span> </button><button type="button"
@@ -167,6 +166,33 @@
         </div> <button type="button" class="settings__start-btn">start</button>
       </div>
     </section>
+    <section class="settings-modal modal">
+      <svg class="settings-modal__close-btn">
+        <use href='./img/symbol-defs.svg#icon-cross'></use>
+      </svg>
+
+      <h2 class="settings-modal__headline">Settings</h2>
+      <h3 class="settings-modal__caption">Sound</h3>
+      <div class='settings-modal__audio-wrapper'>
+        <svg id='high' class="settings-modal__audio-ico">
+          <use href='./img/symbol-defs.svg#icon-volume-high'></use>
+        </svg>
+        <svg id='mute' class="settings-modal__audio-ico hidden-modal">
+          <use href='./img/symbol-defs.svg#icon-volume-mute'></use>
+        </svg>
+
+        <input type="range" min='0' max='20' class='settings-modal__audio-range'>
+      </div>
+      <h3 class="settings-modal__caption">Background</h3>
+      <div class="settings-modal__background-wrapper">
+        <img src="./img/bg1.jpg" data-bg="1" alt="Background-img"
+          class="settings-modal__background">
+        <img src="./img/bg2.jpg" data-bg="2" alt="Background-img" class="settings-modal__background">
+        <img src="./img/bg3.jpg" data-bg="3" alt="Background-img" class="settings-modal__background">
+        <img src="./img/bg4.jpg" data-bg="4" alt="Background-img" class="settings-modal__background">
+
+      </div>
+    </section>
     <div class="game__congratulation hidden"></div>
     <section class="game        hidden-modal">
       <!-- <div class="game__counters-wrapper"> -->
@@ -226,11 +252,16 @@
           class="win__btn win__btn--arcade win__replay win__open-modal" type="button"> <span
             class="win__btn-text">Replay</span> </button> </div>
     </section>
-  </main> <audio loop='loop' src="./music/main_theme.mp3" class="audio__main-theme"></audio> <audio loop='loop'
-    src="./music/gameplay.mp3" class="audio__game-play"></audio> <audio src="./music/won_sound.mp3"
-    class="audio__won"></audio> <audio src="./music/countdown.mp3" class="audio__countdown"></audio> <audio
-    src="./music/lose_sound.mp3" class="audio__lose"></audio> <audio src="./music/correct.mp3"
-    class="audio__correct"></audio> <audio src="./music/flip.mp3" class="audio__flip"></audio>
+  </main>
+  <div class="audio">
+    <audio data-volume="1" loop='loop' src="./music/main_theme.mp3" class="audio__main-theme"></audio>
+    <audio data-volume="0.5" loop='loop' src="./music/gameplay.mp3" class="audio__game-play"></audio>
+    <audio data-volume="1" src="./music/won_sound.mp3" class="audio__won"></audio>
+    <audio data-volume="1" src="./music/countdown.mp3" class="audio__countdown"></audio>
+    <audio data-volume="1" src="./music/lose_sound.mp3" class="audio__lose"></audio>
+    <audio data-volume="1" src="./music/correct.mp3" class="audio__correct"></audio>
+    <audio data-volume="1" src="./music/flip.mp3" class="audio__flip"></audio>
+  </div>
   <script src="./js/script.js" type="module"></script>
 </body>
 

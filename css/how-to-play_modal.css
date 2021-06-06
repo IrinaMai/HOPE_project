@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
 .how-to-play {
-  background-color: #d8d8d8;
+  background-color: var(--main-grey);
   border: 1px black solid;
   max-width: 900px;
   /* height: 692px; */
