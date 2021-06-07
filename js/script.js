@@ -12,7 +12,7 @@ window.localStorage.setItem("level", window.localStorage.getItem("level") || 1);
 window.localStorage.setItem("volume", window.localStorage.getItem("volume") || 1);
 window.localStorage.setItem("bg", window.localStorage.getItem("bg") || 1);
 refs.volume = +window.localStorage.getItem("volume");
-document.querySelector(".main").style.backgroundImage = `url(../img/bg${localStorage.getItem("bg")}.jpg)`;
+document.querySelector(".main").style.backgroundImage = `url(./img/bg${localStorage.getItem("bg")}.jpg)`;
 document.querySelector(".start__btn").addEventListener("click", () => {
    document.querySelector(".settings").classList.remove("hidden-modal");
    document.querySelector(".start").classList.add("hidden-modal");
@@ -128,5 +128,5 @@ document.querySelector(".settings-modal__background-wrapper").addEventListener("
    window.localStorage.setItem("bg", event.target.dataset.bg);
    event.target.parentNode.querySelector(".settings-modal__background--active").classList.remove("settings-modal__background--active");
    event.target.classList.add("settings-modal__background--active");
-   document.querySelector(".main").style.backgroundImage = `url(../img/bg${event.target.dataset.bg}.jpg)`;
+   document.querySelector(".main").style.backgroundImage = `url(./img/bg${event.target.dataset.bg}.jpg)`;
 });
