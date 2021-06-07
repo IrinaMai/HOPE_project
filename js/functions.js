@@ -245,6 +245,7 @@ export const startGame = (cardsAmount, cards, containerRef, timerCount, playerAm
 
 // закінчує гру
 const endGame = (timerCount, cardsAmount, gameType, currentLevel) => {
+   document.querySelector(".timer").classList.remove('low-time')
    const containerRef = document.querySelector(".card-container");
    containerRef.removeEventListener("click", funcGlob.compareCardSingle);
    containerRef.classList.remove(`card-container--${cardsAmount}`);
@@ -269,6 +270,7 @@ const endGame = (timerCount, cardsAmount, gameType, currentLevel) => {
 const timer = (timerCount, minutesRef, secondsRef, cardsAmount) => {
    let minutes = (timerCount / 60) % 60;
    let seconds = timerCount % 60 < 10 ? `0${timerCount % 60}` : timerCount % 60;
+   if (timerCount <= 10) minutesRef.parentNode.classList.add('low-time');
    if (gameResult === "win") {
       document.querySelector(".win__headline").textContent = `You won in ${timerCount} seconds`;
       gameResult = "";
