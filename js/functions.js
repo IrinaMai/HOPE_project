@@ -37,19 +37,18 @@ const drawCards = (amount, cards, containerRef) => {
    }
 };
 // <source srcset="./img/Cansel-button@1X.webp" type="image/webp"><img src="./img/Cansel-button@1X.png" alt="close_btn" />
-let gameResult;
 const funcGlob = {};
+const state = {};
 // починає гру на заданому контейнері карток (контейнер карток, тип гри)
 const gamePlay = (container, playerAmount, gameType, currentLevel) => {
-   const state = {
-      ref: "",
-      id: 0,
-      position: 1,
-      gameState: 0,
-      blocked: false,
-      move: 0,
-      count: [0, 0, 0, 0],
-   };
+   state.ref = "";
+   state.id = 0;
+   state.position = 1;
+   state.blocked = false;
+   state.move = 0;
+   state.count = [0, 0, 0, 0];
+   state.gameState = 0;
+   state.gameResult = "";
    const correctRef = document.querySelector(".audio__correct");
    const flipRef = document.querySelector(".audio__flip");
    const removeCards = (event) => {
@@ -90,8 +89,7 @@ const gamePlay = (container, playerAmount, gameType, currentLevel) => {
             setTimeout(removeCards, 400, event);
             state.gameState++;
             if (state.gameState === container.children.length / 2) {
-               state.gameState = 0;
-               gameResult = "win";
+               state.gameResult = "win";
                if (gameType === "arcade") {
                   const levelRef = +window.localStorage.getItem("level");
                   if (currentLevel !== 10) currentLevel === levelRef ? window.localStorage.setItem("level", levelRef + 1) : 1;
@@ -103,7 +101,6 @@ const gamePlay = (container, playerAmount, gameType, currentLevel) => {
                   }
                   document.querySelector(".win__headline-arcade").textContent = `You complete level ${currentLevel}`;
                }
-               container.removeEventListener("click", funcGlob.compareCardSingle);
                setTimeout(endGame, 500, 1, container.children.length, gameType, currentLevel);
             }
          }
@@ -141,12 +138,6 @@ const gamePlay = (container, playerAmount, gameType, currentLevel) => {
                state.gameState = 0;
                state.maxCount = 0;
                state.winner = [];
-               setTimeout(() => {
-                  const gameCounterRef = document.querySelectorAll(".game__player-counter");
-                  for (let i = 0; i < playerAmount; i++) {
-                     gameCounterRef[i].classList.add("hidden");
-                  }
-               }, 500);
                state.count.map((player) => (state.maxCount = state.maxCount < player ? player : state.maxCount));
                state.count.map((player, index) => (state.maxCount === player ? state.winner.push(index) : 1));
                let string = "Winner:";
@@ -154,8 +145,7 @@ const gamePlay = (container, playerAmount, gameType, currentLevel) => {
                   string = `${string} player-${player + 1}`;
                }
                document.querySelector(".win__headline").textContent = string;
-               container.removeEventListener("click", funcGlob.compareCardMulti);
-               playerCount[state.move].classList.add("game__player-counter--current");
+               playerCount[0].classList.add("game__player-counter--current");
 
                setTimeout(endGame, 500, 1, container.children.length, gameType);
             }
@@ -180,6 +170,7 @@ const gamePlay = (container, playerAmount, gameType, currentLevel) => {
          state.position = 2;
       }
    };
+   state.gameState = 0;
    if (gameType === "singlePlayer" || gameType === "arcade") container.addEventListener("click", funcGlob.compareCardSingle);
    if (gameType === "multiPlayer") {
       container.addEventListener("click", funcGlob.compareCardMulti);
@@ -191,6 +182,7 @@ const gamePlay = (container, playerAmount, gameType, currentLevel) => {
 // розпочинає гру із заданими параметрами
 
 export const startGame = (cardsAmount, cards, containerRef, timerCount, playerAmount, gameType, currentLevel) => {
+   if (gameType === 'multiPlayer')pauseBtnRef.classList.add("game__pause--multiPlayer");
    if (gameType === "arcade") cardsAmount = level[currentLevel - 1].cardsAmount;
    containerRef.classList.add(`card-container--${cardsAmount}`);
    document.querySelector(".game").classList.remove("hidden-modal");
@@ -199,6 +191,7 @@ export const startGame = (cardsAmount, cards, containerRef, timerCount, playerAm
    numbersRef.classList.remove("hidden-modal");
    const countdownRef = document.querySelector(".audio__countdown");
    document.querySelector(".audio__main-theme").pause();
+   document.querySelector(".audio__main-theme").currentTime = 0;
    let index = 0;
    countdownRef.play();
    numbersRef.children[index].classList.remove("hidden-modal");
@@ -210,12 +203,10 @@ export const startGame = (cardsAmount, cards, containerRef, timerCount, playerAm
       countdownRef.play();
       index++;
       numbersRef.children[index - 1].classList.add("hidden-modal");
-
       if (index === 4) {
          clearInterval(startNumber);
          numbersRef.classList.add("hidden-modal");
          numbersRef.children[index - 1].classList.add("hidden-modal");
-
          return;
       }
       setTimeout(() => numbersRef.children[index].classList.add("scaled-number"), 200);
@@ -249,6 +240,8 @@ export const startGame = (cardsAmount, cards, containerRef, timerCount, playerAm
 
 // закінчує гру
 const endGame = (timerCount, cardsAmount, gameType, currentLevel) => {
+   if (gameType === "multiPlayer") pauseBtnRef.classList.remove("game__pause--multiPlayer");
+
    document.querySelector(".audio__little-time").pause();
    document.querySelector(".audio__little-time").currentTime = 0;
    pauseBtnRef.classList.add("hidden");
@@ -259,10 +252,26 @@ const endGame = (timerCount, cardsAmount, gameType, currentLevel) => {
    document.querySelector(".game").classList.add("hidden-modal");
    document.querySelector(".audio__game-play").pause();
    document.querySelector(".timer").classList.add("hidden-modal");
+   const gameCounterRef = document.querySelectorAll(".game__player-counter");
+   containerRef.removeEventListener("click", funcGlob.compareCardMulti);
+   containerRef.removeEventListener("click", funcGlob.compareCardSingle);
+
+   for (let i = 0; i < funcGlob.playerAmount; i++) {
+      gameCounterRef[i].classList.add("hidden");
+   }
+   if ((state.gameResult === "toMenu")) {
+      event.target.parentNode.parentNode.classList.add("hidden-modal");
+      document.querySelector(".settings").classList.remove("hidden-modal");
+      document.querySelector(".audio__main-theme").play();
+      setTimeout(function () {
+         state.gameResult = "";
+      }, 1100);
+      return;
+   }
    if (timerCount + 1 === 0) {
       document.querySelector(".audio__lose").play();
       document.querySelector(".lose").classList.remove("hidden-modal");
-      gameResult = "";
+      state.gameResult = "";
    } else {
       document.querySelector(".game__congratulation").classList.remove("hidden");
       document.querySelector(".audio__won").play();
@@ -273,7 +282,16 @@ const endGame = (timerCount, cardsAmount, gameType, currentLevel) => {
       gameType === "arcade" ? document.querySelector(".arcade").classList.remove("hidden-modal") : document.querySelector(".win").classList.remove("hidden-modal");
    }
 };
+
+// повертається до меню
+
+export const returnToMenu = () => {
+   state.gameResult = "toMenu";
+   endGame(0, funcGlob.cardsAmount, 0, 0);
+};
+
 // таймер (кількість часу, посилання на хилини, секунди)
+
 const timer = (timerCount, minutesRef, secondsRef, cardsAmount) => {
    let minutes = (timerCount / 60) % 60;
    let seconds = timerCount % 60 < 10 ? `0${timerCount % 60}` : timerCount % 60;
@@ -281,9 +299,10 @@ const timer = (timerCount, minutesRef, secondsRef, cardsAmount) => {
       minutesRef.parentNode.classList.add("low-time");
       document.querySelector(".audio__little-time").play();
    }
-   if (gameResult === "win") {
+   if (state.gameResult) return;
+   if (state.gameResult === "win") {
       document.querySelector(".win__headline").textContent = `You won in ${timerCount} seconds`;
-      gameResult = "";
+      state.gameResult = "";
       return;
    }
    if (timerCount < 0) {
@@ -294,26 +313,4 @@ const timer = (timerCount, minutesRef, secondsRef, cardsAmount) => {
       secondsRef.innerHTML = seconds;
       setTimeout(timer, 1000, timerCount, minutesRef, secondsRef);
    }
-};
-// повертається до меню
-
-export const returnToMenu = () => {
-   gameResult = "win";
-   const gameCounterRef = [...document.querySelectorAll(".game__player-counter")];
-   for (let i = 0; i < funcGlob.playerAmount; i++) {
-      gameCounterRef[i].classList.add("hidden");
-   }
-   event.target.parentNode.parentNode.classList.add("hidden-modal");
-   document.querySelector(".settings").classList.remove("hidden-modal");
-   document.querySelector(".audio__main-theme").play();
-   document.querySelector(".audio__little-time").pause();
-   document.querySelector(".audio__little-time").currentTime = 0;
-   pauseBtnRef.classList.add("hidden");
-   document.querySelector(".timer").classList.remove("low-time");
-   const containerRef = document.querySelector(".card-container");
-   containerRef.removeEventListener("click", funcGlob.compareCardSingle);
-   containerRef.classList.remove(`card-container--${funcGlob.cardsAmount}`);
-   document.querySelector(".game").classList.add("hidden-modal");
-   document.querySelector(".audio__game-play").pause();
-   document.querySelector(".timer").classList.add("hidden-modal");
 };

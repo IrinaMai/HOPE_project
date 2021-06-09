@@ -110,6 +110,10 @@ document.querySelectorAll(".close-modal-btn").forEach((btn) => {
    });
 });
 document.querySelector(".settings-modal__audio-range").value = refs.volume;
+if (refs.volume === 0) {
+   document.querySelector("#mute").classList.remove("hidden-modal");
+   document.querySelector("#high").classList.add("hidden-modal");
+}
 document.querySelector(".settings-modal__background-wrapper").children[+window.localStorage.getItem("bg") - 1].classList.add("settings-modal__background--active");
 [...document.querySelector(".audio").children].forEach((audio) => (audio.volume = +audio.dataset.volume * refs.volume));
 document.querySelector(".settings-modal__close-btn").addEventListener("click", () => event.currentTarget.parentNode.classList.add("hidden-modal"));
@@ -158,7 +162,7 @@ pauseBtnRef.addEventListener("click", () => {
    pauseModalRef.classList.remove("hidden-modal");
 });
 //----------------------------------------------------------------
-document.querySelector(".pause__resume").addEventListener("click", () => event.currentTarget.parentNode.parentNode.classList.add('hidden-modal'));
+document.querySelector(".pause__resume").addEventListener("click", () => event.currentTarget.parentNode.parentNode.classList.add("hidden-modal"));
 document.querySelector(".pause__settings").addEventListener("click", () => document.querySelector(".settings-modal").classList.remove("hidden-modal"));
 document.querySelector(".pause__how-to-play").addEventListener("click", () => document.querySelector(".how-to-play").classList.remove("hidden-modal"));
 document.querySelector(".pause__back-to-menu").addEventListener("click", returnToMenu);

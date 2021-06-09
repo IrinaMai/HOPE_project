@@ -56,6 +56,10 @@
 .card__back {
   transition: 500ms linear;
   border-radius: 6%;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  /* transition: transform 0.7s; */
+  border-radius: 6%;
 }
 .card:active {
   transform: scale(0.95);
@@ -185,7 +189,7 @@
   transform: scale(0.2);
   transition: 300ms linear;
 }
-.scaled-number{
+.scaled-number {
   /* opacity: 0.5; */
   transform: scale(0.05);
   transition: 500ms linear;
@@ -247,31 +251,43 @@
     max-width: 550px;
   }
 }
-.low-time{
-  transition:400ms linear;
+.low-time {
+  transition: 400ms linear;
   transform: scale(1.2);
-}.low-time span{
+}
+.low-time span {
   color: red;
-
 }
 /* @media screen  and (max-width:900px) {
   .game__card-container-wrapper {
   padding:0 30px;
 }
 } */
-.game__pause{
-  position: absolute;top: 20px;
+.game__pause {
+  position: absolute;
+  top: 20px;
   left: 20px;
-  fill:var(--main-grey);
-    width: 45px;
-    height: 45px;
-    cursor: pointer;
-    position: fixed;
-    transition: all 0.5s;
-    padding: 10px;
-    border-radius: 50%;
-}.game__pause:hover{
-    transform:scale(1.1);
-    background-color: var(--main-blue);
+  fill: var(--main-grey);
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  position: fixed;
+  transition: all 0.5s;
+  padding: 10px;
+  border-radius: 50%;
+  z-index: 9;
 
+}
+.game__pause:hover {
+  transform: scale(1.1);
+  background-color: var(--main-blue);
+}
+.game__pause--multiPlayer:hover {
+  /* transform: scale(1.1) translate(-50%, 0); */
+  transform:translate(-50%, 0) scale(1.1);
+
+}
+.game__pause--multiPlayer{
+  left: 50%;
+  transform: translate(-50%, 0);
 }
