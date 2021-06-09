@@ -166,3 +166,14 @@ document.querySelector(".pause__resume").addEventListener("click", () => event.c
 document.querySelector(".pause__settings").addEventListener("click", () => document.querySelector(".settings-modal").classList.remove("hidden-modal"));
 document.querySelector(".pause__how-to-play").addEventListener("click", () => document.querySelector(".how-to-play").classList.remove("hidden-modal"));
 document.querySelector(".pause__back-to-menu").addEventListener("click", returnToMenu);
+
+// btn-wrapper ----------------------
+document.querySelector(".start_how-to-play").addEventListener("click", () => {
+   document.querySelector(".how-to-play").classList.remove("hidden-modal");
+   document.querySelector(".audio__main-theme").play();
+});
+document.querySelector(".start_author_02").addEventListener("click", () => {
+   document.querySelector(".authors-modal").classList.remove("hidden-modal");
+   document.querySelector(".audio__main-theme").play();
+});
+//--------------

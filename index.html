@@ -13,7 +13,7 @@
 
 <body>
   <main class="main">
-    <section class="start modal">
+    <section class="start modal hidden-modal">
       <div class="start__logo-wrapper">
         <picture>
           <source srcset="./img/logo-big@1X.webp" type="image/webp"><img src="./img/logo-big@1X.png" class="start__logo"
@@ -104,6 +104,16 @@
       </div>
     </section>
     <section class="settings modal hidden-modal">
+      <div class="btn_game_wrapper">
+        <svg class="settings__gear">
+          <use href='./img/icons.svg#icon-cog'></use></svg>
+
+        <div class="btn_game_control_wrapper">
+          <button type="button" class="start_author_02 start_open-modal start_controls"> A </button>
+        <button type="button"class="start_how-to-play start_open-modal start_controls">?</button> 
+        </div>
+        
+        </div>
       <div class="settings__type-wrapper">
         <div data-type="singlePlayer" class="settings__type            settings__type--active"> <span
             data-type="singlePlayer" class="game-type__text">Single player</span> </div>
@@ -227,7 +237,7 @@
         <span class="timer__seconds timer__inner">00</span>
       </div>
     </section>
-    <section class="win modal hidden-modal">
+    <section class="win modal">
       <div class="win__content-wrapper">
         <h2 class="win__headline">You WON!</h2> <button class="win__btn win__open-menu win__open-modal" type="button">
           <span class="win__btn-text">Back to menu</span></button><button class="win__btn win__replay win__open-modal"

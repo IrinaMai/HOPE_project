@@ -235,13 +235,12 @@ export const startGame = (cardsAmount, cards, containerRef, timerCount, playerAm
       document.querySelector(".audio__game-play").play();
       pauseBtnRef.classList.remove("hidden");
       gamePlay(containerRef, playerAmount, gameType, currentLevel);
-   }, 5400); //7400
+   }, 400); //5400
 };
 
 // закінчує гру
 const endGame = (timerCount, cardsAmount, gameType, currentLevel) => {
-   if (gameType === "multiPlayer") pauseBtnRef.classList.remove("game__pause--multiPlayer");
-
+   pauseBtnRef.classList.remove("game__pause--multiPlayer");
    document.querySelector(".audio__little-time").pause();
    document.querySelector(".audio__little-time").currentTime = 0;
    pauseBtnRef.classList.add("hidden");
