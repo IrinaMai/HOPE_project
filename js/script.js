@@ -1,5 +1,6 @@
 import cards from "./cards.js";
 import { startGame } from "./functions.js";
+import { returnToMenu } from "./functions.js";
 const refs = {};
 refs.containerRef = document.querySelector(".card-container");
 refs.settingsRef = document.querySelector(".settings");
@@ -130,3 +131,34 @@ document.querySelector(".settings-modal__background-wrapper").addEventListener("
    event.target.classList.add("settings-modal__background--active");
    document.querySelector(".main").style.backgroundImage = `url(./img/bg${event.target.dataset.bg}.jpg)`;
 });
+
+// pause -----------------------------------------------------------
+const pauseBtnRef = document.querySelector(".game__pause");
+const pauseModalRef = document.querySelector(".pause");
+const pauseCloseBtnRef = document.querySelector(".pause-modal__close-btn");
+
+pauseCloseBtnRef.addEventListener("click", () => {
+   // pauseModalRef.style.transition = "opacity 1s";
+   pauseModalRef.classList.add("hidden-modal");
+});
+
+// window.addEventListener("keydown", (event) => {
+//    if (event.code === "Space") {
+//       pauseModalRef.classList.remove("hidden-modal");
+//    }
+// });
+
+// window.addEventListener("keydown", (event) => {
+//    if (event.code === "Escape") {
+//       pauseModalRef.classList.add("hidden-modal");
+//    }
+// });
+
+pauseBtnRef.addEventListener("click", () => {
+   pauseModalRef.classList.remove("hidden-modal");
+});
+//----------------------------------------------------------------
+document.querySelector(".pause__resume").addEventListener("click", () => event.currentTarget.parentNode.parentNode.classList.add('hidden-modal'));
+document.querySelector(".pause__settings").addEventListener("click", () => document.querySelector(".settings-modal").classList.remove("hidden-modal"));
+document.querySelector(".pause__how-to-play").addEventListener("click", () => document.querySelector(".how-to-play").classList.remove("hidden-modal"));
+document.querySelector(".pause__back-to-menu").addEventListener("click", returnToMenu);

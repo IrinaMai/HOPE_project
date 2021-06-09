@@ -1,5 +1,7 @@
 // генерує в випадкові послідовності картки (приймає кількість карток, масив карток та посилання куди вставити картки)
 import level from "./level.js";
+const pauseRef = document.querySelector("#pause");
+const pauseBtnRef = document.querySelector(".game__pause");
 
 const drawCards = (amount, cards, containerRef) => {
    containerRef.querySelectorAll(".card").forEach((card) => card.remove());
@@ -201,6 +203,8 @@ export const startGame = (cardsAmount, cards, containerRef, timerCount, playerAm
    countdownRef.play();
    numbersRef.children[index].classList.remove("hidden-modal");
    numbersRef.children[index].classList.add("scaled-number");
+   funcGlob.cardsAmount = cardsAmount;
+   funcGlob.playerAmount = playerAmount;
    const startNumber = setInterval(() => {
       countdownRef.currentTime = 0;
       countdownRef.play();
@@ -238,7 +242,7 @@ export const startGame = (cardsAmount, cards, containerRef, timerCount, playerAm
       }
       document.querySelector(".audio__game-play").currentTime = 0;
       document.querySelector(".audio__game-play").play();
-
+      pauseBtnRef.classList.remove("hidden");
       gamePlay(containerRef, playerAmount, gameType, currentLevel);
    }, 5400); //7400
 };
@@ -247,7 +251,7 @@ export const startGame = (cardsAmount, cards, containerRef, timerCount, playerAm
 const endGame = (timerCount, cardsAmount, gameType, currentLevel) => {
    document.querySelector(".audio__little-time").pause();
    document.querySelector(".audio__little-time").currentTime = 0;
-
+   pauseBtnRef.classList.add("hidden");
    document.querySelector(".timer").classList.remove("low-time");
    const containerRef = document.querySelector(".card-container");
    containerRef.removeEventListener("click", funcGlob.compareCardSingle);
@@ -285,9 +289,31 @@ const timer = (timerCount, minutesRef, secondsRef, cardsAmount) => {
    if (timerCount < 0) {
       endGame(timerCount, cardsAmount);
    } else {
-      timerCount--;
+      if (pauseRef.classList.contains("hidden-modal")) timerCount--;
       minutesRef.innerHTML = Math.floor(minutes);
       secondsRef.innerHTML = seconds;
       setTimeout(timer, 1000, timerCount, minutesRef, secondsRef);
    }
+};
+// повертається до меню
+
+export const returnToMenu = () => {
+   gameResult = "win";
+   const gameCounterRef = [...document.querySelectorAll(".game__player-counter")];
+   for (let i = 0; i < funcGlob.playerAmount; i++) {
+      gameCounterRef[i].classList.add("hidden");
+   }
+   event.target.parentNode.parentNode.classList.add("hidden-modal");
+   document.querySelector(".settings").classList.remove("hidden-modal");
+   document.querySelector(".audio__main-theme").play();
+   document.querySelector(".audio__little-time").pause();
+   document.querySelector(".audio__little-time").currentTime = 0;
+   pauseBtnRef.classList.add("hidden");
+   document.querySelector(".timer").classList.remove("low-time");
+   const containerRef = document.querySelector(".card-container");
+   containerRef.removeEventListener("click", funcGlob.compareCardSingle);
+   containerRef.classList.remove(`card-container--${funcGlob.cardsAmount}`);
+   document.querySelector(".game").classList.add("hidden-modal");
+   document.querySelector(".audio__game-play").pause();
+   document.querySelector(".timer").classList.add("hidden-modal");
 };

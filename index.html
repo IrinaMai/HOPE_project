@@ -193,8 +193,23 @@
 
       </div>
     </section>
+    <section id="pause" class="pause hidden-modal modal">
+      <h2 class="pause__headline">Game paused!</h2>
+        <svg class="pause-modal__close-btn">
+          <use href='./img/icons.svg#icon-cross'></use>
+        </svg>
+      <div class="pause__wrapper">
+        <button class="pause__btn pause__resume">Resume</button>
+        <button class="pause__btn pause__back-to-menu">Back to menu</button>
+        <button class="pause__btn pause__settings">Settings</button>
+        <button class="pause__btn pause__how-to-play">How to play</button>
+      </div>
+    </section>
     <div class="game__congratulation hidden"></div>
-    <section class="game        hidden-modal">
+    <section class="game hidden-modal">
+      <svg class="game__pause hidden">
+          <use href='./img/icons.svg#icon-pause'></use>
+        </svg>
       <!-- <div class="game__counters-wrapper"> -->
       <div class="game__player-counter hidden game__player-counter--1">0</div>
       <div class="game__player-counter hidden game__player-counter--2">0</div>
@@ -255,7 +270,7 @@
   </main>
   <div class="audio">
     <audio data-volume="1" loop='loop' src="./music/main_theme.mp3" class="audio__main-theme"></audio>
-    <audio data-volume="0.5" loop='loop' src="./music/gameplay.mp3" class="audio__game-play"></audio>
+    <audio data-volume="0.75" loop='loop' src="./music/gameplay.mp3" class="audio__game-play"></audio>
     <audio data-volume="1" src="./music/won_sound.mp3" class="audio__won"></audio>
     <audio data-volume="1" src="./music/countdown.mp3" class="audio__countdown"></audio>
     <audio data-volume="1" src="./music/lose_sound.mp3" class="audio__lose"></audio>

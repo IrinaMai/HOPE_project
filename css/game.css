@@ -259,3 +259,19 @@
   padding:0 30px;
 }
 } */
+.game__pause{
+  position: absolute;top: 20px;
+  left: 20px;
+  fill:var(--main-grey);
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    position: fixed;
+    transition: all 0.5s;
+    padding: 10px;
+    border-radius: 50%;
+}.game__pause:hover{
+    transform:scale(1.1);
+    background-color: var(--main-blue);
+
+}
