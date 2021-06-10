@@ -13,18 +13,18 @@
    left: 50%;
    transform: translate(-50%, -50%);
    transition: 400ms linear;
-   /* transition: opacity 500ms; */
-   z-index: 3;
+   z-index: 10;
 }
 .main {
    min-height: 100vh;
-   background-image: url(../img/bg1.jpg);
+   background-image: url(../img/bg4.jpg);
    background-position: center;
    background-repeat: no-repeat;
    background-size: cover;
+   position: relative;
 }
 picture {
-   display: flex;
+   display: inline-flex;
    align-items: center;
    justify-content: center;
 }
@@ -36,4 +36,6 @@ picture {
    position: absolute;
    visibility: hidden;
    z-index: -1;
+   transition: 400ms linear;
+
 }

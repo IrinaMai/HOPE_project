@@ -7,6 +7,7 @@
    border: 1px solid #000;
 }
 .settings-modal__audio-ico {
+   transition: none;
    display: block;
    height: 45px;
    width: 45px;
@@ -125,4 +126,38 @@
 }.settings-modal__background {
    height: 120px;
 }
+}
+.backdrop_settings_modal {
+   z-index: 10;
+   transition: 400ms opacity;
+   width: 100vw;
+   height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position: fixed;
+   background: rgb(19,26,116);
+background: radial-gradient(circle, rgba(19,26,116,0.8690826672465861) 20%, rgba(12,13,22,0.846673703661152) 62%);
+}
+
+.settings_btn {
+   z-index: 10;
+   width: 65px;
+   height: 65px;
+   position: absolute;
+   top: 25px;
+   left: 25px;
+   background-color: transparent;
+   transition: 400ms linear;
+}
+
+.settings_btn_img {
+   width: 65px;
+   height: 65px;
+   fill: var(--main-grey);
+   transition: 200ms linear;
+}
+
+.settings_btn:hover .settings_btn_img{
+   transform: scale(1.2) rotate(90deg);
 }

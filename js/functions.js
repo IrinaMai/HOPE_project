@@ -235,7 +235,7 @@ export const startGame = (cardsAmount, cards, containerRef, timerCount, playerAm
       document.querySelector(".audio__game-play").play();
       pauseBtnRef.classList.remove("hidden");
       gamePlay(containerRef, playerAmount, gameType, currentLevel);
-   }, 400); //5400
+   }, 5400); //5400
 };
 
 // закінчує гру
@@ -286,6 +286,7 @@ const endGame = (timerCount, cardsAmount, gameType, currentLevel) => {
 
 export const returnToMenu = () => {
    state.gameResult = "toMenu";
+   document.querySelector(".settings_btn--js").classList.remove("hidden");
    endGame(0, funcGlob.cardsAmount, 0, 0);
 };
 

@@ -13,194 +13,207 @@
 
 <body>
   <main class="main">
-    <section class="start modal hidden-modal">
-      <div class="start__logo-wrapper">
-        <picture>
-          <source srcset="./img/logo-big@1X.webp" type="image/webp"><img src="./img/logo-big@1X.png" class="start__logo"
-            alt="logo" />
-        </picture>
-      </div>
+   <div id="video-bg">
+      <video muted width="100%" height="auto" preload="auto" autoplay="autoplay">
+          <source src="./video/background_video.mp4" type="video/mp4"></source>
+      </video>
+  </div>
+    <h1 class="logo logo_game">cards</h1>
+    <h2 class="logo logo_team">by hope team</h2>
+    <button class="settings_btn settings_btn--js"><svg class="settings_btn_img"class="settings-modal__audio-ico hidden-modal">
+      <use href='./img/symbol-defs.svg#icon-cog'></use>
+    </svg></button>
+    <section class="start modal">
       <div class="start__controls-wrapper"> <button type="button"
-          class="start__author start__open-modal start__controls"> A </bu> <button class="start__btn start__open-modal"
+          class="start__author start__author--js start__open-modal start__controls"> A </button> <button class="start__btn start__open-modal"
             type="button"> <span class="start__btn-text">play</span> </button><button type="button"
-            class="start__how-to-play            start__open-modal            start__controls">?</button> </div>
+            class="start__how-to-play start__how-to-play--js start__open-modal            start__controls">?</button> </div>
     </section>
-    <section id="how-to-play" class="how-to-play modal hidden-modal">
-      <h2 class="how-to-play__headline">How To Play?</h2>
-      <div data-modal="how-to-play" class="how-to-play__close close-modal-btn">
-        <picture>
-          <source srcset="./img/Cansel-button@1X.webp" type="image/webp"><img src="./img/Cansel-button@1X.png"
-            alt="close_btn" />
-        </picture>
-      </div>
-      <div class="how-to-play__wrapper">
-        <p class="how-to-play__text"> First, click the "play" button. You will see a table where you need to select the
-          number of cards and time. If you are not playing alone, go to the next "multiplayer" function, it is next to
-          the "single player" function. You need to choose the number of cards and the number of players. Then click
-          "start". You see the cards on the screen. You must find two identical cards for the time you have chosen.</p>
-        <div class="how-to-play__photo-wrapper">
+    <section id="how-to-play" class="backdrop_how-to-play_modal modal hidden-modal">
+      <div class="how-to-play modal">
+        <div data-modal="how-to-play" class="how-to-play_close close-modal-btn">
           <picture>
-            <source srcset="./img/settings.webp" type="image/webp"><img src="./img/settings.png" alt="how-to-play-img"
-              class="how-to-play__img">
+            <svg class="how-to-play-modal__close-btn">
+              <use href='./img/symbol-defs.svg#icon-cross'></use>
+            </svg>
           </picture>
-          <picture>
-            <source srcset="./img/gameplay.webp" type="image/webp"><img src="./img/gameplay.png" alt="how-to-play-img"
-              class="how-to-play__img">
-          </picture>
+        </div>
+        <h2 class="how-to-play__headline">How To Play?</h2>
+        <div class="how-to-play__wrapper">
+          <p class="how-to-play__text"> First, click the "play" button. You will see a table where you need to select
+            the
+            number of cards and time. If you are not playing alone, go to the next "multiplayer" function, it is next to
+            the "single player" function. You need to choose the number of cards and the number of players. Then click
+            "start". You see the cards on the screen. You must find two identical cards for the time you have chosen.
+          </p>
+          <div class="how-to-play__photo-wrapper">
+            <picture>
+              <source srcset="./img/settings.webp" type="image/webp"><img src="./img/settings.png" alt="how-to-play-img"
+                class="how-to-play__img">
+            </picture>
+            <picture>
+              <source srcset="./img/gameplay.webp" type="image/webp"><img src="./img/gameplay.png" alt="how-to-play-img"
+                class="how-to-play__img">
+            </picture>
+          </div>
         </div>
       </div>
     </section>
-    <section class="modal authors-modal hidden-modal" id="authors">
-      <div class="authors_content">
+    <section class="backdrop_authors_modal modal hidden-modal" id="authors">
+      <div class="authors-modal modal">
         <div data-modal="authors" class="authors_close close-modal-btn">
           <picture>
-            <source srcset="./img/Cansel-button@1X.webp" type="image/webp"><img src="./img/Cansel-button@1X.png"
-              alt="#">
+            <svg class="authors-modal__close-btn">
+              <use href='./img/symbol-defs.svg#icon-cross'></use>
+            </svg>
           </picture>
         </div>
-        <h2 class="authors_title">authors of this game</h2>
-        <div class="authors_wrapper">
-          <div class="authors_card">
-            <picture>
-              <source srcset="./img/authors_Bogdan.webp" type="image/webp"><img class="authors_img"
-                src="./img/authors_Bogdan.png" alt="Bogdan">
-            </picture>
-            <h4 class="authors_name"> Bogdanchick </h4>
-            <p class="authors_text"> TeamLead </p>
-          </div>
-          <div class="authors_card">
-            <picture>
-              <source srcset="./img/authors_Mari.webp" type="image/webp"><img class="authors_img"
-                src="./img/authors_Mari.png" alt="Mari">
-            </picture>
-            <h4 class="authors_name"> Mariia Hrypych </h4>
-            <p class="authors_text">HR manager</p>
-          </div>
-          <div class="authors_card">
-            <picture>
-              <source srcset="./img/authors_Dmytro.webp" type="image/webp"><img class="authors_img"
-                src="./img/authors_Dmytro.png" alt="Dmytro">
-            </picture>
-            <h4 class="authors_name"> Kolisnyk Dmytro </h4>
-            <p class="authors_text"> Based in Chicago. I love playing tennis and loud music.</p>
-          </div>
-          <div class="authors_card">
-            <picture>
-              <source srcset="./img/authors_Oksana.webp" type="image/webp"><img class="authors_img"
-                src="./img/authors_Oksana.png" alt="Oksana">
-            </picture>
-            <h4 class="authors_name">Oksana</h4>
-            <p class="authors_text"> 12 years old. Live in Lviv. </p>
+        <div class="authors_content">
+          <h2 class="authors_title">authors of this game</h2>
+          <div class="authors_wrapper">
+            <div class="authors_card">
+              <picture>
+                <source srcset="./img/max.webp" type="image/webp">
+                <img class="authors_img" src="./img/max.jpg"
+                  alt="Max">
+              </picture>
+              <h4 class="authors_name"> Max Popsuy </h4>
+              <p class="authors_text"> 12 years old. Live in Kiev. </p>
+            </div>
+            <div class="authors_card">
+              <picture>
+                <source srcset="./img/authors_Mari.webp" type="image/webp"><img class="authors_img"
+                  src="./img/authors_Mari.png" alt="Mari">
+              </picture>
+              <h4 class="authors_name"> Mariia Hrypych </h4>
+              <p class="authors_text">HR manager</p>
+            </div>
+            <div class="authors_card">
+              <picture>
+                <source srcset="./img/authors_Dmytro.webp" type="image/webp"><img class="authors_img"
+                  src="./img/authors_Dmytro.png" alt="Dmytro">
+              </picture>
+              <h4 class="authors_name"> Kolisnyk Dmytro </h4>
+              <p class="authors_text">TeamLead. 16 years old.</p>
+            </div>
+            <div class="authors_card">
+              <picture>
+                <source srcset="./img/Igor.webp" type="image/webp">
+                <img class="authors_img" src="./img/igor.jpg"
+                  alt="Igor">
+              </picture>
+              <h4 class="authors_name">Ihor Yakibiuk</h4>
+              <p class="authors_text"> Man who study Front_End developing. </p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="authors_footer"><a target="_blank" href="https://github.com/DmytroKolisnyk2/Brawl-Stars_card-game">
-          <picture>
-            <source srcset="./img/logo.ico" type="image/webp"><img class="authors-footer__img" src="./img/logo.ico"
-              alt="logo">
-          </picture>
-        </a>
-        <p class="authors_footer__text">© 2021 Bravissimo all rights reserved</p>
+        <div class="authors_footer"><a target="_blank" href="https://github.com/DmytroKolisnyk2/Brawl-Stars_card-game">
+            <picture>
+              <source srcset="./img/logo.ico" type="image/webp"><img class="authors-footer__img" src="./img/logo.ico"
+                alt="logo">
+            </picture>
+          </a>
+          <p class="authors_footer__text"> 2021 HOPE Team &#169; all rights reserved</p>
+        </div>
       </div>
     </section>
+    
     <section class="settings modal hidden-modal">
-      <div class="btn_game_wrapper">
-        <svg class="settings__gear">
-          <use href='./img/icons.svg#icon-cog'></use></svg>
-
-        <div class="btn_game_control_wrapper">
-          <button type="button" class="start_author_02 start_open-modal start_controls"> A </button>
-        <button type="button"class="start_how-to-play start_open-modal start_controls">?</button> 
-        </div>
+       <div class="btn_game_control_wrapper">
+          <button type="button" class="start__author--js start_open-modal start_controls"> A </button>
+        <button type="button"class="start__how-to-play--js start_open-modal start_how-to-play start_controls">?</button> 
         
-        </div>
-      <div class="settings__type-wrapper">
-        <div data-type="singlePlayer" class="settings__type            settings__type--active"> <span
-            data-type="singlePlayer" class="game-type__text">Single player</span> </div>
-        <div data-type="multiPlayer" class="settings__type"> <span data-type="multiPlayer" class="game-type__text">Multi
-            player</span> </div>
-        <div data-type="arcade" class="settings__type"> <span data-type="arcade" class="game-type__text">Arcade</span>
-        </div>
-      </div>
-      <div class="settings__wrapper">
-        <div class="settings__by-type            settings__singlePlayer">
-          <div class="settings__count-cards">
-            <h2 class="settings__headline">Select the amount of cards</h2>
-            <div class="settings__wrappers count-cards__wrapper"> <button type="button"
-                class="settings__btn count-btn                  settings__btn--choosed"
-                data-count="12">12</button><button type="button" class="settings__btn count-btn" data-count="18">
-                18</button><button type="button" class="settings__btn                  count-btn" data-count="24">
-                24</button><button type="button" class="settings__btn count-btn" data-count="36"> 36 </button> </div>
-          </div>
-          <div class="settings__count-timer">
-            <h2 class="settings__headline">Select the amount of time</h2>
-            <div class="count-timer__wrapper settings__wrappers"> <button type="button"
-                class="settings__btn count-timer" data-count="30"> 0.5 min</button><button type="button"
-                class="settings__btn count-timer settings__btn--choosed" data-count="60"> 1 min</button><button
-                type="button" class="settings__btn count-timer" data-count="120"> 2 min</button><button type="button"
-                class="settings__btn count-timer" data-count="180"> 3 min </button> </div>
+        </div> 
+      <div class="settings__menu">
+        <div class="settings__type-wrapper">
+          <div data-type="singlePlayer" class="settings__type            settings__type--active"> <span
+              data-type="singlePlayer" class="game-type__text">Single player</span> </div>
+          <div data-type="multiPlayer" class="settings__type"> <span data-type="multiPlayer" class="game-type__text">Multi
+              player</span> </div>
+          <div data-type="arcade" class="settings__type"> <span data-type="arcade" class="game-type__text">Arcade</span>
           </div>
         </div>
-        <div class="settings__by-type settings__multiPlayer hidden-modal">
-          <div class="settings__count-cards">
-            <h2 class="settings__headline">Select the amount of cards</h2>
-            <div class="count-cards__wrapper                settings__wrappers"> <button type="button"
-                class="settings__btn                  count-btn settings__btn--choosed"
-                data-count="12">12</button><button type="button" class="settings__btn count-btn" data-count="18">
-                18</button><button type="button" class="settings__btn                  count-btn" data-count="24">
-                24</button><button type="button" class="settings__btn count-btn" data-count="36"> 36 </button> </div>
+        <div class="settings__wrapper">
+          <div class="settings__by-type            settings__singlePlayer">
+            <div class="settings__count-cards">
+              <h2 class="settings__headline">Select the amount of cards</h2>
+              <div class="settings__wrappers count-cards__wrapper"> <button type="button"
+                  class="settings__btn count-btn                  settings__btn--choosed"
+                  data-count="12">12</button><button type="button" class="settings__btn count-btn" data-count="18">
+                  18</button><button type="button" class="settings__btn                  count-btn" data-count="24">
+                  24</button><button type="button" class="settings__btn count-btn" data-count="36"> 36 </button> </div>
+            </div>
+            <div class="settings__count-timer">
+              <h2 class="settings__headline">Select the amount of time</h2>
+              <div class="count-timer__wrapper settings__wrappers"> <button type="button"
+                  class="settings__btn count-timer" data-count="30"> 0.5 min</button><button type="button"
+                  class="settings__btn count-timer settings__btn--choosed" data-count="60"> 1 min</button><button
+                  type="button" class="settings__btn count-timer" data-count="120"> 2 min</button><button type="button"
+                  class="settings__btn count-timer" data-count="180"> 3 min </button> </div>
+            </div>
           </div>
-          <div class="settings__count-player">
-            <h2 class="settings__headline">Select the number of players</h2>
-            <div class="count-player__wrapper settings__wrappers"> <button type="button"
-                class="settings__btn count-timer                  settings__btn--choosed" data-count="2">
-                2</button><button type="button" class="settings__btn count-timer" data-count="3"> 3</button><button
-                type="button" class="settings__btn count-timer" data-count="4"> 4 </button> </div>
+          <div class="settings__by-type settings__multiPlayer hidden-modal">
+            <div class="settings__count-cards">
+              <h2 class="settings__headline">Select the amount of cards</h2>
+              <div class="count-cards__wrapper                settings__wrappers"> <button type="button"
+                  class="settings__btn                  count-btn settings__btn--choosed"
+                  data-count="12">12</button><button type="button" class="settings__btn count-btn" data-count="18">
+                  18</button><button type="button" class="settings__btn                  count-btn" data-count="24">
+                  24</button><button type="button" class="settings__btn count-btn" data-count="36"> 36 </button> </div>
+            </div>
+            <div class="settings__count-player">
+              <h2 class="settings__headline">Select the number of players</h2>
+              <div class="count-player__wrapper settings__wrappers"> <button type="button"
+                  class="settings__btn count-timer                  settings__btn--choosed" data-count="2">
+                  2</button><button type="button" class="settings__btn count-timer" data-count="3"> 3</button><button
+                  type="button" class="settings__btn count-timer" data-count="4"> 4 </button> </div>
+            </div>
           </div>
+          <div class="settings__by-type            settings__arcade hidden-modal">
+            <div class="settings__count-cards">
+              <h2 class="settings__headline">Select level</h2>
+              <div class="arcade__btn-wrapper settings__wrappers"> <button
+                  class="settings__btn arcade__btn settings__btn--choosed">1</button> <button
+                  class="settings__btn arcade__btn arcade__btn--close">2</button> <button
+                  class="settings__btn arcade__btn arcade__btn--close">3</button> <button
+                  class="settings__btn arcade__btn arcade__btn--close">4</button><button
+                  class="settings__btn arcade__btn arcade__btn--close">5</button><button
+                  class="settings__btn arcade__btn arcade__btn--close">6</button><button
+                  class="settings__btn arcade__btn arcade__btn--close">7</button><button
+                  class="settings__btn arcade__btn arcade__btn--close">8</button><button
+                  class="settings__btn arcade__btn arcade__btn--close">9</button><button
+                  class="settings__btn arcade__btn arcade__btn--close">10</button> </div>
+            </div>
+          </div> <button type="button" class="settings__start-btn">start</button>
         </div>
-        <div class="settings__by-type            settings__arcade hidden-modal">
-          <div class="settings__count-cards">
-            <h2 class="settings__headline">Select level</h2>
-            <div class="arcade__btn-wrapper settings__wrappers"> <button
-                class="settings__btn arcade__btn settings__btn--choosed">1</button> <button
-                class="settings__btn arcade__btn arcade__btn--close">2</button> <button
-                class="settings__btn arcade__btn arcade__btn--close">3</button> <button
-                class="settings__btn arcade__btn arcade__btn--close">4</button><button
-                class="settings__btn arcade__btn arcade__btn--close">5</button><button
-                class="settings__btn arcade__btn arcade__btn--close">6</button><button
-                class="settings__btn arcade__btn arcade__btn--close">7</button><button
-                class="settings__btn arcade__btn arcade__btn--close">8</button><button
-                class="settings__btn arcade__btn arcade__btn--close">9</button><button
-                class="settings__btn arcade__btn arcade__btn--close">10</button> </div>
-          </div>
-        </div> <button type="button" class="settings__start-btn">start</button>
       </div>
     </section>
-    <section class="settings-modal hidden-modal modal">
-      <svg class="settings-modal__close-btn">
-        <use href='./img/symbol-defs.svg#icon-cross'></use>
-      </svg>
-
-      <h2 class="settings-modal__headline">Settings</h2>
-      <h3 class="settings-modal__caption">Sound</h3>
-      <div class='settings-modal__audio-wrapper'>
-        <svg id='high' class="settings-modal__audio-ico">
-          <use href='./img/symbol-defs.svg#icon-volume-high'></use>
-        </svg>
-        <svg id='mute' class="settings-modal__audio-ico hidden-modal">
-          <use href='./img/symbol-defs.svg#icon-volume-mute'></use>
+    <section class="backdrop_settings_modal modal hidden-modal">
+      <div class="settings-modal modal">
+        <svg class="settings-modal__close-btn">
+          <use href='./img/symbol-defs.svg#icon-cross'></use>
         </svg>
 
-        <input type="range" min='0' max='20' class='settings-modal__audio-range'>
-      </div>
-      <h3 class="settings-modal__caption">Background</h3>
-      <div class="settings-modal__background-wrapper">
-        <img src="./img/bg1.jpg" data-bg="1" alt="Background-img"
-          class="settings-modal__background">
-        <img src="./img/bg2.jpg" data-bg="2" alt="Background-img" class="settings-modal__background">
-        <img src="./img/bg3.jpg" data-bg="3" alt="Background-img" class="settings-modal__background">
-        <img src="./img/bg4.jpg" data-bg="4" alt="Background-img" class="settings-modal__background">
+        <h2 class="settings-modal__headline">Settings</h2>
+        <h3 class="settings-modal__caption">Sound</h3>
+        <div class='settings-modal__audio-wrapper'>
+          <svg id='high' class="settings-modal__audio-ico">
+            <use href='./img/symbol-defs.svg#icon-volume-high'></use>
+          </svg>
+          <svg id='mute' class="settings-modal__audio-ico hidden-modal">
+            <use href='./img/symbol-defs.svg#icon-volume-mute'></use>
+          </svg>
 
+          <input type="range" min='0' max='20' class='settings-modal__audio-range'>
+        </div>
+        <h3 class="settings-modal__caption">Background</h3>
+        <div class="settings-modal__background-wrapper">
+          <img src="./img/bg1.jpg" data-bg="1" alt="Background-img" class="settings-modal__background">
+          <img src="./img/bg2.jpg" data-bg="2" alt="Background-img" class="settings-modal__background">
+          <img src="./img/bg3.jpg" data-bg="3" alt="Background-img" class="settings-modal__background">
+          <img src="./img/bg4.jpg" data-bg="4" alt="Background-img" class="settings-modal__background">
+
+        </div>
       </div>
     </section>
     <section id="pause" class="pause hidden-modal modal">
@@ -211,8 +224,8 @@
       <div class="pause__wrapper">
         <button class="pause__btn pause__resume">Resume</button>
         <button class="pause__btn pause__back-to-menu">Back to menu</button>
-        <button class="pause__btn pause__settings">Settings</button>
-        <button class="pause__btn pause__how-to-play">How to play</button>
+        <button class="pause__btn settings_btn--js">Settings</button>
+        <button class="pause__btn start__how-to-play--js">How to play</button>
       </div>
     </section>
     <div class="game__congratulation hidden"></div>
@@ -237,7 +250,7 @@
         <span class="timer__seconds timer__inner">00</span>
       </div>
     </section>
-    <section class="win modal">
+    <section class="win modal hidden-modal">
       <div class="win__content-wrapper">
         <h2 class="win__headline">You WON!</h2> <button class="win__btn win__open-menu win__open-modal" type="button">
           <span class="win__btn-text">Back to menu</span></button><button class="win__btn win__replay win__open-modal"

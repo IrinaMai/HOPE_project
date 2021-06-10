@@ -18,7 +18,70 @@ document.querySelector(".start__btn").addEventListener("click", () => {
    document.querySelector(".settings").classList.remove("hidden-modal");
    document.querySelector(".start").classList.add("hidden-modal");
    document.querySelector(".audio__main-theme").play();
+   document.querySelector("#video-bg").classList.add("hidden-modal");
+   document.querySelectorAll(".logo").forEach((item) => item.classList.add("hidden-modal"));
 });
+const keyCloseModal = (event) => {
+   if (event.code === "Escape") {
+      document.querySelector(".backdrop_authors_modal").classList.add("hidden-modal");
+      window.removeEventListener("keydown", keyCloseModal);
+   }
+};
+
+const keyCloseModal2 = (event) => {
+   if (event.code === "Escape") {
+      document.querySelector(".backdrop_how-to-play_modal").classList.add("hidden-modal");
+      window.removeEventListener("keydown", keyCloseModal2);
+   }
+};
+
+const keyCloseModal3 = (event) => {
+   if (event.code === "Escape") {
+      document.querySelector(".backdrop_settings_modal").classList.add("hidden-modal");
+      window.removeEventListener("keydown", keyCloseModal3);
+   }
+};
+
+const backDropCloseModal = (event) => {
+   if (event.target === event.currentTarget) {
+      event.currentTarget.classList.add("hidden-modal");
+   }
+};
+
+document.querySelectorAll(".settings_btn--js").forEach((btn) =>
+   btn.addEventListener("click", () => {
+      console.log(!document.querySelector(".start").classList.contains("hidden-modal"));
+      if (!document.querySelector(".start").classList.contains("hidden-modal")) document.querySelector(".audio__main-theme").play();
+      window.addEventListener("keydown", keyCloseModal3);
+      document.querySelector(".backdrop_settings_modal").classList.remove("hidden-modal");
+   })
+);
+
+document.querySelector(".backdrop_settings_modal").addEventListener("click", backDropCloseModal);
+
+document.querySelector(".settings-modal__close-btn").addEventListener("click", () => {
+   window.removeEventListener("keydown", keyCloseModal3);
+   event.currentTarget.parentNode.parentNode.classList.add("hidden-modal");
+});
+
+document.querySelectorAll(".start__how-to-play--js").forEach((btn) =>
+   btn.addEventListener("click", () => {
+      document.querySelector(".backdrop_how-to-play_modal").classList.remove("hidden-modal");
+      window.addEventListener("keydown", keyCloseModal2);
+      document.querySelector(".audio__main-theme").play();
+   })
+);
+document.querySelectorAll(".start__author--js").forEach((btn) =>
+   btn.addEventListener("click", () => {
+      document.querySelector(".backdrop_authors_modal").classList.remove("hidden-modal");
+      window.addEventListener("keydown", keyCloseModal);
+      document.querySelector(".audio__main-theme").play();
+   })
+);
+
+document.querySelector(".backdrop_authors_modal").addEventListener("click", backDropCloseModal);
+
+document.querySelector(".backdrop_how-to-play_modal").addEventListener("click", backDropCloseModal);
 
 document.querySelector(".start__how-to-play").addEventListener("click", () => {
    document.querySelector(".how-to-play").classList.remove("hidden-modal");
@@ -80,6 +143,7 @@ document.querySelector(".arcade__btn-wrapper").addEventListener("click", () => {
 });
 document.querySelectorAll(".win__open-menu").forEach((btn) => {
    btn.addEventListener("click", () => {
+      document.querySelector(".settings_btn--js").classList.remove("hidden");
       document.querySelector(".settings").classList.remove("hidden-modal");
       document.querySelector(".game__congratulation").classList.add("hidden");
       document.querySelector(".audio__main-theme").currentTime = 0;
@@ -103,20 +167,22 @@ document.querySelectorAll(".win__replay").forEach((btn) =>
 document.querySelector(".settings__start-btn").addEventListener("click", function () {
    startGame(refs.cardsAmount, cards, refs.containerRef, refs.timerCount, refs.playerAmount, refs.gameType, refs.currentLevel);
    refs.settingsRef.classList.add("hidden-modal");
+   document.querySelector(".settings_btn--js").classList.add("hidden");
 });
 document.querySelectorAll(".close-modal-btn").forEach((btn) => {
    btn.addEventListener("click", () => {
+      window.removeEventListener("keydown", keyCloseModal);
+      window.removeEventListener("keydown", keyCloseModal2);
       document.getElementById(event.currentTarget.dataset.modal).classList.add("hidden-modal");
    });
 });
-document.querySelector(".settings-modal__audio-range").value = refs.volume;
+document.querySelector(".settings-modal__audio-range").value = refs.volume * 20;
 if (refs.volume === 0) {
    document.querySelector("#mute").classList.remove("hidden-modal");
    document.querySelector("#high").classList.add("hidden-modal");
 }
 document.querySelector(".settings-modal__background-wrapper").children[+window.localStorage.getItem("bg") - 1].classList.add("settings-modal__background--active");
 [...document.querySelector(".audio").children].forEach((audio) => (audio.volume = +audio.dataset.volume * refs.volume));
-document.querySelector(".settings-modal__close-btn").addEventListener("click", () => event.currentTarget.parentNode.classList.add("hidden-modal"));
 document.querySelector(".settings-modal__audio-range").addEventListener("input", () => {
    window.localStorage.setItem("volume", event.target.value / 20);
    if (+event.target.value === 0) {
@@ -163,17 +229,4 @@ pauseBtnRef.addEventListener("click", () => {
 });
 //----------------------------------------------------------------
 document.querySelector(".pause__resume").addEventListener("click", () => event.currentTarget.parentNode.parentNode.classList.add("hidden-modal"));
-document.querySelector(".pause__settings").addEventListener("click", () => document.querySelector(".settings-modal").classList.remove("hidden-modal"));
-document.querySelector(".pause__how-to-play").addEventListener("click", () => document.querySelector(".how-to-play").classList.remove("hidden-modal"));
 document.querySelector(".pause__back-to-menu").addEventListener("click", returnToMenu);
-
-// btn-wrapper ----------------------
-document.querySelector(".start_how-to-play").addEventListener("click", () => {
-   document.querySelector(".how-to-play").classList.remove("hidden-modal");
-   document.querySelector(".audio__main-theme").play();
-});
-document.querySelector(".start_author_02").addEventListener("click", () => {
-   document.querySelector(".authors-modal").classList.remove("hidden-modal");
-   document.querySelector(".audio__main-theme").play();
-});
-//--------------

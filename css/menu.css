@@ -1,5 +1,15 @@
 .settings {
    width: 100%;
+   min-height: 100vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   z-index: 3;
+}
+.settings__menu {
+  max-width: 780px ;
+  width: 100%;
+  padding-top: 100px;
 }
 .settings__wrapper {
    padding: 45px 0 65px;
@@ -152,24 +162,24 @@
    background-color: rgb(53, 181, 255);
 }
 
-/* add */
-.btn_game_wrapper {
-   display: flex;
-   justify-content: space-around;
-   max-width: 1200px;
-   margin: 0 auto 20px auto;
-}
 .btn_game_control_wrapper {
+   top: 25px;
+   right: 25px;
    display: flex;
+   position: absolute;
 }
 .start_controls {
-   font-size: 70px;
+   font-size: 50px;
    color: #fff;
    border-radius: 50%;
    cursor: pointer;
-   width: 100px;
-   height: 100px;
+   width: 78px;
+   height: 78px;
    background-color: var(--main-blue);
+}
+.start_controls:active {
+   box-shadow: 5px 5px rgba(0, 0, 0, 0.25);
+   top: 5px;
 }
 .start_open-modal {
    font-weight: 600;
@@ -186,20 +196,9 @@
    background-color: var(--main-yellow);
    margin-left: 10px;
 }
-.settings__gear {
-   fill: var(--main-grey);
-   width: 100px;
-   height: 100px;
-}
+
 @media screen and (max-width: 768px) {
-   .btn_game_wrapper {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 20px;
-   }
    .btn_game_control_wrapper {
-      display: flex;
-      padding-left: 10px;
    }
    .arcade__btn-wrapper {
       width: 100%;
@@ -210,6 +209,11 @@
       margin: 0 auto;
    }
 }
+/* @media screen and (max-height: 750px) {
+  .settings {
+   align-items: flex-end;
+}
+} */
 @media screen and (max-width: 650px) {
    .settings__wrappers {
       flex-direction: column;
@@ -234,9 +238,9 @@
       max-width: 415px;
    }
    .start_controls {
-      width: 80px;
-      height: 80px;
-      font-size: 60px;
+      width: 50px;
+      height: 50px;
+      font-size: 40px;
    }
    .start_open-modal {
       font-weight: 500;
