@@ -57,7 +57,7 @@ const gamePlay = (container, playerAmount, gameType, currentLevel) => {
       event.target.parentNode.parentNode.classList.add("hidden");
       state.ref.parentNode.parentNode.classList.add("hidden");
       state.blocked = false;
-      setTimeout(() => {
+      setTimeout((event) => {
          event.target.parentNode.nextElementSibling.lastElementChild.classList.remove("scaled");
          state.ref.parentNode.nextElementSibling.lastElementChild.classList.remove("scaled");
       }, 300);
@@ -72,7 +72,7 @@ const gamePlay = (container, playerAmount, gameType, currentLevel) => {
    const playerCount = [...document.querySelectorAll(".game__player-counter")];
    const playerMessage = document.querySelector(".game__player-turn");
    // починає гру при сингл плеєрі і аркаді
-   funcGlob.compareCardSingle = () => {
+   funcGlob.compareCardSingle = (event) => {
       if (state.blocked || !event.target.classList.contains("card__back")) return;
       event.target.classList.add("flip");
       // flipRef.currentTime = 0;
@@ -116,7 +116,7 @@ const gamePlay = (container, playerAmount, gameType, currentLevel) => {
    };
 
    // починає гру при мульти плеєрі
-   funcGlob.compareCardMulti = () => {
+   funcGlob.compareCardMulti = (event) => {
       if (state.blocked || !event.target.classList.contains("card__back")) return;
       event.target.classList.add("flip");
       // flipRef.currentTime = 0;
@@ -198,7 +198,7 @@ export const startGame = (cardsAmount, cards, containerRef, timerCount, playerAm
    numbersRef.children[index].classList.add("scaled-number");
    funcGlob.cardsAmount = cardsAmount;
    funcGlob.playerAmount = playerAmount;
-   const startNumber = setInterval(() => {
+   const startNumber = setInterval((event) => {
       countdownRef.currentTime = 0;
       countdownRef.play();
       index++;
@@ -209,7 +209,7 @@ export const startGame = (cardsAmount, cards, containerRef, timerCount, playerAm
          numbersRef.children[index - 1].classList.add("hidden-modal");
          return;
       }
-      setTimeout(() => numbersRef.children[index].classList.add("scaled-number"), 200);
+      setTimeout((event) => numbersRef.children[index].classList.add("scaled-number"), 200);
       numbersRef.children[index].classList.remove("hidden-modal");
       numbersRef.children[index - 1].classList.remove("scaled-number");
    }, 1300);
@@ -239,7 +239,7 @@ export const startGame = (cardsAmount, cards, containerRef, timerCount, playerAm
 };
 
 // закінчує гру
-const endGame = (timerCount, cardsAmount, gameType, currentLevel) => {
+const endGame = (timerCount, cardsAmount, gameType, currentLevel,event) => {
    pauseBtnRef.classList.remove("game__pause--multiPlayer");
    document.querySelector(".audio__little-time").pause();
    document.querySelector(".audio__little-time").currentTime = 0;
@@ -259,6 +259,7 @@ const endGame = (timerCount, cardsAmount, gameType, currentLevel) => {
       gameCounterRef[i].classList.add("hidden");
    }
    if ((state.gameResult === "toMenu")) {
+      console.log(event.target.parentNode.parentNode);
       event.target.parentNode.parentNode.classList.add("hidden-modal");
       document.querySelector(".settings").classList.remove("hidden-modal");
       document.querySelector(".audio__main-theme").play();
@@ -284,10 +285,11 @@ const endGame = (timerCount, cardsAmount, gameType, currentLevel) => {
 
 // повертається до меню
 
-export const returnToMenu = () => {
+export const returnToMenu = (event) => {
    state.gameResult = "toMenu";
    document.querySelector(".settings_btn--js").classList.remove("hidden");
-   endGame(0, funcGlob.cardsAmount, 0, 0);
+   console.log(document.querySelector(".settings_btn--js"));
+   endGame(0, funcGlob.cardsAmount, 0, 0,event);
 };
 
 // таймер (кількість часу, посилання на хилини, секунди)

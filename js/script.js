@@ -54,7 +54,7 @@ const backDropCloseModal = (event) => {
 };
 
 document.querySelectorAll(".settings_btn--js").forEach((btn) =>
-   btn.addEventListener("click", () => {
+   btn.addEventListener("click", (event) => {
       console.log(!document.querySelector(".start").classList.contains("hidden-modal"));
       if (!document.querySelector(".start").classList.contains("hidden-modal")) document.querySelector(".audio__main-theme").play();
       window.addEventListener("keydown", keyCloseModal3);
@@ -64,20 +64,20 @@ document.querySelectorAll(".settings_btn--js").forEach((btn) =>
 
 document.querySelector(".backdrop_settings_modal").addEventListener("click", backDropCloseModal);
 
-document.querySelector(".settings-modal__close-btn").addEventListener("click", () => {
+document.querySelector(".settings-modal__close-btn").addEventListener("click", (event) => {
    window.removeEventListener("keydown", keyCloseModal3);
    event.currentTarget.parentNode.parentNode.classList.add("hidden-modal");
 });
 
 document.querySelectorAll(".start__how-to-play--js").forEach((btn) =>
-   btn.addEventListener("click", () => {
+   btn.addEventListener("click", (event) => {
       document.querySelector(".backdrop_how-to-play_modal").classList.remove("hidden-modal");
       window.addEventListener("keydown", keyCloseModal2);
       document.querySelector(".audio__main-theme").play();
    })
 );
 document.querySelectorAll(".start__author--js").forEach((btn) =>
-   btn.addEventListener("click", () => {
+   btn.addEventListener("click", (event) => {
       document.querySelector(".backdrop_authors_modal").classList.remove("hidden-modal");
       window.addEventListener("keydown", keyCloseModal);
       document.querySelector(".audio__main-theme").play();
@@ -88,17 +88,17 @@ document.querySelector(".backdrop_authors_modal").addEventListener("click", back
 
 document.querySelector(".backdrop_how-to-play_modal").addEventListener("click", backDropCloseModal);
 
-document.querySelector(".start__how-to-play").addEventListener("click", () => {
+document.querySelector(".start__how-to-play").addEventListener("click", (event) => {
    document.querySelector(".how-to-play").classList.remove("hidden-modal");
    document.querySelector(".audio__main-theme").play();
 });
-document.querySelector(".start__author").addEventListener("click", () => {
+document.querySelector(".start__author").addEventListener("click", (event) => {
    document.querySelector(".authors-modal").classList.remove("hidden-modal");
    document.querySelector(".audio__main-theme").play();
 });
 
 document.querySelectorAll(".settings__type").forEach((type) => {
-   type.addEventListener("click", () => {
+   type.addEventListener("click", (event) => {
       refs.gameType = event.target.dataset.type;
       document.querySelectorAll(".settings__by-type").forEach((settings) => settings.classList.add("hidden-modal"));
       document.querySelector(`.settings__${event.currentTarget.dataset.type}`).classList.remove("hidden-modal");
@@ -121,33 +121,33 @@ document.querySelectorAll(".settings__type").forEach((type) => {
    });
 });
 document.querySelectorAll(".count-cards__wrapper").forEach((container) => {
-   container.addEventListener("click", () => {
+   container.addEventListener("click", (event) => {
       if (event.target === event.currentTarget) return;
       refs.cardsAmount = +event.target.dataset.count;
       event.target.parentNode.querySelector(".settings__btn--choosed").classList.remove("settings__btn--choosed");
       event.target.classList.add("settings__btn--choosed");
    });
 });
-document.querySelector(".count-timer__wrapper").addEventListener("click", () => {
+document.querySelector(".count-timer__wrapper").addEventListener("click", (event) => {
    if (event.target === event.currentTarget) return;
    refs.timerCount = +event.target.dataset.count;
    event.target.parentNode.querySelector(".settings__btn--choosed").classList.remove("settings__btn--choosed");
    event.target.classList.add("settings__btn--choosed");
 });
-document.querySelector(".count-player__wrapper").addEventListener("click", () => {
+document.querySelector(".count-player__wrapper").addEventListener("click", (event) => {
    if (event.target === event.currentTarget) return;
    refs.playerAmount = +event.target.dataset.count;
    event.target.parentNode.querySelector(".settings__btn--choosed").classList.remove("settings__btn--choosed");
    event.target.classList.add("settings__btn--choosed");
 });
-document.querySelector(".arcade__btn-wrapper").addEventListener("click", () => {
+document.querySelector(".arcade__btn-wrapper").addEventListener("click", (event) => {
    if (event.target === event.currentTarget || event.target.classList.contains("arcade__btn--close")) return;
    refs.currentLevel = +event.target.textContent;
    event.target.parentNode.querySelector(".settings__btn--choosed").classList.remove("settings__btn--choosed");
    event.target.classList.add("settings__btn--choosed");
 });
 document.querySelectorAll(".win__open-menu").forEach((btn) => {
-   btn.addEventListener("click", () => {
+   btn.addEventListener("click", (event) => {
       document.querySelector(".settings_btn--js").classList.remove("hidden");
       document.querySelector(".settings").classList.remove("hidden-modal");
       document.querySelector(".game__congratulation").classList.add("hidden");
@@ -156,14 +156,14 @@ document.querySelectorAll(".win__open-menu").forEach((btn) => {
       btn.parentNode.parentNode.classList.add("hidden-modal");
    });
 });
-document.querySelector(".win__next-level").addEventListener("click", () => {
+document.querySelector(".win__next-level").addEventListener("click", (event) => {
    refs.currentLevel++;
    startGame(refs.cardsAmount, cards, refs.containerRef, refs.timerCount, refs.playerAmount, refs.gameType, refs.currentLevel);
    document.querySelector(".game__congratulation").classList.add("hidden");
    event.currentTarget.parentNode.parentNode.classList.add("hidden-modal");
 });
 document.querySelectorAll(".win__replay").forEach((btn) =>
-   btn.addEventListener("click", () => {
+   btn.addEventListener("click", (event) => {
       startGame(refs.cardsAmount, cards, refs.containerRef, refs.timerCount, refs.playerAmount, refs.gameType, refs.currentLevel);
       btn.parentNode.parentNode.classList.add("hidden-modal");
       document.querySelector(".game__congratulation").classList.add("hidden");
@@ -175,7 +175,7 @@ document.querySelector(".settings__start-btn").addEventListener("click", functio
    document.querySelector(".settings_btn--js").classList.add("hidden");
 });
 document.querySelectorAll(".close-modal-btn").forEach((btn) => {
-   btn.addEventListener("click", () => {
+   btn.addEventListener("click", (event) => {
       window.removeEventListener("keydown", keyCloseModal);
       window.removeEventListener("keydown", keyCloseModal2);
       document.getElementById(event.currentTarget.dataset.modal).classList.add("hidden-modal");
@@ -188,7 +188,7 @@ if (refs.volume === 0) {
 }
 document.querySelector(".settings-modal__background-wrapper").children[+window.localStorage.getItem("bg") - 1].classList.add("settings-modal__background--active");
 [...document.querySelector(".audio").children].forEach((audio) => (audio.volume = +audio.dataset.volume * refs.volume));
-document.querySelector(".settings-modal__audio-range").addEventListener("input", () => {
+document.querySelector(".settings-modal__audio-range").addEventListener("input", (event) => {
    window.localStorage.setItem("volume", event.target.value / 20);
    if (+event.target.value === 0) {
       event.target.parentNode.querySelector("#mute").classList.remove("hidden-modal");
@@ -199,7 +199,7 @@ document.querySelector(".settings-modal__audio-range").addEventListener("input",
    }
    [...document.querySelector(".audio").children].forEach((audio) => (audio.volume = (+audio.dataset.volume * event.target.value) / 20));
 });
-document.querySelector(".settings-modal__background-wrapper").addEventListener("click", () => {
+document.querySelector(".settings-modal__background-wrapper").addEventListener("click", (event) => {
    if (event.target === event.currentTarget) return;
    window.localStorage.setItem("bg", event.target.dataset.bg);
    event.target.parentNode.querySelector(".settings-modal__background--active").classList.remove("settings-modal__background--active");
@@ -212,7 +212,7 @@ const pauseBtnRef = document.querySelector(".game__pause");
 const pauseModalRef = document.querySelector(".pause");
 const pauseCloseBtnRef = document.querySelector(".pause-modal__close-btn");
 
-pauseCloseBtnRef.addEventListener("click", () => {
+pauseCloseBtnRef.addEventListener("click", (event) => {
    // pauseModalRef.style.transition = "opacity 1s";
    pauseModalRef.classList.add("hidden-modal");
 });
@@ -229,9 +229,9 @@ pauseCloseBtnRef.addEventListener("click", () => {
 //    }
 // });
 
-pauseBtnRef.addEventListener("click", () => {
+pauseBtnRef.addEventListener("click", (event) => {
    pauseModalRef.classList.remove("hidden-modal");
 });
 //----------------------------------------------------------------
-document.querySelector(".pause__resume").addEventListener("click", () => event.currentTarget.parentNode.parentNode.classList.add("hidden-modal"));
+document.querySelector(".pause__resume").addEventListener("click", (event) => event.currentTarget.parentNode.parentNode.classList.add("hidden-modal"));
 document.querySelector(".pause__back-to-menu").addEventListener("click", returnToMenu);
