@@ -77,8 +77,6 @@ const gamePlay = (container, playerAmount, gameType, currentLevel) => {
       event.target.classList.add("flip");
       // flipRef.currentTime = 0;
       // flipRef.play();
-      console.log(event.target);
-      console.log(event.target.parentNode.nextElementSibling.lastElementChild);
       event.target.parentNode.nextElementSibling.lastElementChild.classList.add("choosed");
       if (state.position === 2) {
          if (state.ref === event.target) return;
@@ -121,8 +119,6 @@ const gamePlay = (container, playerAmount, gameType, currentLevel) => {
       event.target.classList.add("flip");
       // flipRef.currentTime = 0;
       // flipRef.play();
-      console.log(event.target);
-      console.log(event.target.parentNode.nextElementSibling.lastElementChild);
       event.target.parentNode.nextElementSibling.lastElementChild.classList.add("choosed");
       if (state.position === 2) {
          if (state.ref === event.target) return;
@@ -259,7 +255,6 @@ const endGame = (timerCount, cardsAmount, gameType, currentLevel,event) => {
       gameCounterRef[i].classList.add("hidden");
    }
    if ((state.gameResult === "toMenu")) {
-      console.log(event.target.parentNode.parentNode);
       event.target.parentNode.parentNode.classList.add("hidden-modal");
       document.querySelector(".settings").classList.remove("hidden-modal");
       document.querySelector(".audio__main-theme").play();
@@ -288,7 +283,6 @@ const endGame = (timerCount, cardsAmount, gameType, currentLevel,event) => {
 export const returnToMenu = (event) => {
    state.gameResult = "toMenu";
    document.querySelector(".settings_btn--js").classList.remove("hidden");
-   console.log(document.querySelector(".settings_btn--js"));
    endGame(0, funcGlob.cardsAmount, 0, 0,event);
 };
 

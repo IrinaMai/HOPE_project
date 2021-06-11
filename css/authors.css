@@ -28,8 +28,8 @@ background: radial-gradient(circle, rgba(19,26,116,0.8690826672465861) 20%, rgba
 
 .authors-modal__close-btn {
    position: absolute;
-   top: 5%;
-   right: 5%;
+   top: 7%;
+   right: 2%;
    height: 45px;
    width: 45px;
    fill: red;

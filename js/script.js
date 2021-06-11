@@ -55,7 +55,6 @@ const backDropCloseModal = (event) => {
 
 document.querySelectorAll(".settings_btn--js").forEach((btn) =>
    btn.addEventListener("click", (event) => {
-      console.log(!document.querySelector(".start").classList.contains("hidden-modal"));
       if (!document.querySelector(".start").classList.contains("hidden-modal")) document.querySelector(".audio__main-theme").play();
       window.addEventListener("keydown", keyCloseModal3);
       document.querySelector(".backdrop_settings_modal").classList.remove("hidden-modal");
