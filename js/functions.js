@@ -308,7 +308,7 @@ const timer = (timerCount, minutesRef, secondsRef, cardsAmount) => {
       return;
    }
    if (timerCount < 0) {
-      endGame(timerCount, cardsAmount);
+      endGame(timerCount, funcGlob.cardsAmount);
    } else {
       if (pauseRef.classList.contains("hidden-modal")) timerCount--;
       minutesRef.innerHTML = Math.floor(minutes);

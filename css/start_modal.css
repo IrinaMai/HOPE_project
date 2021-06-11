@@ -257,7 +257,7 @@
 @media screen and (max-width: 1500px) {
    .logo_team {
       right: 5%;
-      animation: apearLogoTeam 18.5s linear;
+      animation: apearLogoTeam 6.5s linear;
    }
 }
 
@@ -293,7 +293,7 @@
 
    .logo_team {
       right: -20%;
-      animation: apearLogoTeam 18.5s linear;
+      animation: apearLogoTeam 6.5s linear;
    }
 
    /* @keyframes apearLogoTeam {
