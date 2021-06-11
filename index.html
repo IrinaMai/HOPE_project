@@ -255,44 +255,52 @@
       </div>
     </section>
     <section class="win modal hidden-modal">
+      <h2 class="win__headline">You WON!</h2>
       <div class="win__content-wrapper">
-        <h2 class="win__headline">You WON!</h2> <button class="win__btn win__open-menu win__open-modal" type="button">
-          <span class="win__btn-text">Back to menu</span></button><button class="win__btn win__replay win__open-modal"
-          type="button"> <span class="win__btn-text">Replay</span> </button>
+         <div class="win__btn-wrapper">
+           <button class="win__btn win__open-menu win__open-modal" type="button">
+            <span class="win__btn-text">Back to menu</span></button><button class="win__btn win__replay win__open-modal"
+            type="button"> <span class="win__btn-text">Replay</span> </button>
+        
+           </div>
+      <div class="win__gif win__gif--non-arcade">
+        </div>
       </div>
-      <picture>
-        <source srcset="./img/win@1X.webp" type="image/webp"><img class='win__img' src="./img/win@1X.png"
-          alt="win-image">
-      </picture>
     </section>
-    <section class="win arcade modal hidden-modal">
+    <section class="arcade modal hidden-modal">
+      <h2 class="win__headline win__headline-arcade">You complete stage 1</h2>
       <div class="win__content-wrapper">
-        <h2 class="win__headline win__headline-arcade">You </h2> <button class="win__btn win__open-menu win__open-modal"
-          type="button"> <span class="win__btn-text">Back to menu</span> </button><button
-          class="win__btn win__next-level win__open-modal" type="button"> <span class="win__btn-text">Next
-            level</span></button>
+        <div class="win__btn-wrapper">
+           <button class="win__btn win__open-menu win__open-modal"
+            type="button"> <span class="win__btn-text">Back to menu</span> </button><button
+            class="win__btn win__next-level win__open-modal" type="button"> <span class="win__btn-text">Next
+              level</span></button>
+        </div>
+        <div class="win__gif win__gif--arcade">
+        </div>
       </div>
-      <picture>
-        <source srcset="./img/win@1X.webp" type="image/webp"><img class='win__img' src="./img/win@1X.png"
-          alt="win-image">
-      </picture>
     </section>
     <section class="win lose modal hidden-modal">
-      <div class="win__content-wrapper">
-        <h2 class="win__headline">You LOST</h2> <button class="win__btn win__open-menu win__open-modal" type="button">
-          <span class="win__btn-text">Back to menu</span></button><button class="win__btn win__replay win__open-modal"
-          type="button"> <span class="win__btn-text">Replay</span> </button>
-      </div>
+          <h2 class="win__headline">You LOST</h2><div class="win__content-wrapper">
+        <div class="win__btn-wrapper">
+      
+           <button class="win__btn win__open-menu win__open-modal" type="button">
+            <span class="win__btn-text">Back to menu</span></button><button class="win__btn win__replay win__open-modal"
+            type="button"> <span class="win__btn-text">Replay</span> </button>
+        </div>
+      
       <picture>
         <source srcset="./img/lose@1X.webp" type="image/webp"> <img class='win__img' src="./img/lose@1X.png"
           alt="win-image">
-      </picture>
+      </picture></div>
     </section>
     <section class="win win__arcade modal hidden-modal">
-      <div class="win__arcade-wrapper"> <button class="win__btn win__btn--arcade win__open-menu win__open-modal"
-          type="button"> <span class="win__btn-text">Back to menu</span></button><button
-          class="win__btn win__btn--arcade win__replay win__open-modal" type="button"> <span
-            class="win__btn-text">Replay</span> </button> </div>
+      <div>
+        <div class="win__arcade-wrapper"> <button class="win__btn win__btn--arcade win__open-menu win__open-modal"
+            type="button"> <span class="win__btn-text">Back to menu</span></button><button
+            class="win__btn win__btn--arcade win__replay win__open-modal" type="button"> <span
+              class="win__btn-text">Replay</span> </button> </div>
+      </div>
     </section>
   </main>
   <div class="audio">

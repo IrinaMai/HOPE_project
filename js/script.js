@@ -1,6 +1,7 @@
 import cards from "./cards.js";
 import { startGame } from "./functions.js";
 import { returnToMenu } from "./functions.js";
+import { randomGenerateGifs } from "./functions.js";
 const refs = {};
 refs.containerRef = document.querySelector(".card-container");
 refs.settingsRef = document.querySelector(".settings");
@@ -54,7 +55,7 @@ const backDropCloseModal = (event) => {
 };
 
 document.querySelectorAll(".settings_btn--js").forEach((btn) =>
-   btn.addEventListener("click", (event) => {
+   btn.addEventListener("click", () => {
       if (!document.querySelector(".start").classList.contains("hidden-modal")) document.querySelector(".audio__main-theme").play();
       window.addEventListener("keydown", keyCloseModal3);
       document.querySelector(".backdrop_settings_modal").classList.remove("hidden-modal");
@@ -69,14 +70,14 @@ document.querySelector(".settings-modal__close-btn").addEventListener("click", (
 });
 
 document.querySelectorAll(".start__how-to-play--js").forEach((btn) =>
-   btn.addEventListener("click", (event) => {
+   btn.addEventListener("click", () => {
       document.querySelector(".backdrop_how-to-play_modal").classList.remove("hidden-modal");
       window.addEventListener("keydown", keyCloseModal2);
       document.querySelector(".audio__main-theme").play();
    })
 );
 document.querySelectorAll(".start__author--js").forEach((btn) =>
-   btn.addEventListener("click", (event) => {
+   btn.addEventListener("click", () => {
       document.querySelector(".backdrop_authors_modal").classList.remove("hidden-modal");
       window.addEventListener("keydown", keyCloseModal);
       document.querySelector(".audio__main-theme").play();
@@ -146,25 +147,29 @@ document.querySelector(".arcade__btn-wrapper").addEventListener("click", (event)
    event.target.classList.add("settings__btn--choosed");
 });
 document.querySelectorAll(".win__open-menu").forEach((btn) => {
-   btn.addEventListener("click", (event) => {
+   btn.addEventListener("click", () => {
+      document.querySelectorAll(".win__gif").forEach((gifRef) => (gifRef.innerHTML = ""));
       document.querySelector(".settings_btn--js").classList.remove("hidden");
       document.querySelector(".settings").classList.remove("hidden-modal");
       document.querySelector(".game__congratulation").classList.add("hidden");
       document.querySelector(".audio__main-theme").currentTime = 0;
       document.querySelector(".audio__main-theme").play();
-      btn.parentNode.parentNode.classList.add("hidden-modal");
+      btn.parentNode.parentNode.parentNode.classList.add("hidden-modal");
    });
 });
 document.querySelector(".win__next-level").addEventListener("click", (event) => {
    refs.currentLevel++;
    startGame(refs.cardsAmount, cards, refs.containerRef, refs.timerCount, refs.playerAmount, refs.gameType, refs.currentLevel);
+   document.querySelectorAll(".win__gif").forEach((gifRef) => (gifRef.innerHTML = ""));
+
    document.querySelector(".game__congratulation").classList.add("hidden");
-   event.currentTarget.parentNode.parentNode.classList.add("hidden-modal");
+   event.currentTarget.parentNode.parentNode.parentNode.classList.add("hidden-modal");
 });
 document.querySelectorAll(".win__replay").forEach((btn) =>
-   btn.addEventListener("click", (event) => {
+   btn.addEventListener("click", () => {
+      document.querySelectorAll(".win__gif").forEach((gifRef) => (gifRef.innerHTML = ""));
       startGame(refs.cardsAmount, cards, refs.containerRef, refs.timerCount, refs.playerAmount, refs.gameType, refs.currentLevel);
-      btn.parentNode.parentNode.classList.add("hidden-modal");
+      btn.parentNode.parentNode.parentNode.classList.add("hidden-modal");
       document.querySelector(".game__congratulation").classList.add("hidden");
    })
 );
@@ -211,8 +216,7 @@ const pauseBtnRef = document.querySelector(".game__pause");
 const pauseModalRef = document.querySelector(".pause");
 const pauseCloseBtnRef = document.querySelector(".pause-modal__close-btn");
 
-pauseCloseBtnRef.addEventListener("click", (event) => {
-   // pauseModalRef.style.transition = "opacity 1s";
+pauseCloseBtnRef.addEventListener("click", () => {
    pauseModalRef.classList.add("hidden-modal");
 });
 
@@ -228,7 +232,7 @@ pauseCloseBtnRef.addEventListener("click", (event) => {
 //    }
 // });
 
-pauseBtnRef.addEventListener("click", (event) => {
+pauseBtnRef.addEventListener("click", () => {
    pauseModalRef.classList.remove("hidden-modal");
 });
 //----------------------------------------------------------------
