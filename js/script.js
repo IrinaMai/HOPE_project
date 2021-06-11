@@ -14,6 +14,11 @@ window.localStorage.setItem("volume", window.localStorage.getItem("volume") || 1
 window.localStorage.setItem("bg", window.localStorage.getItem("bg") || 1);
 refs.volume = +window.localStorage.getItem("volume");
 document.querySelector(".main").style.backgroundImage = `url(./img/bg${localStorage.getItem("bg")}.jpg)`;
+document.addEventListener("DOMContentLoaded", () => {
+   document.querySelector(".logo_team").classList.add("logo_game--apearLogoTeam");
+   document.querySelector(".logo_game").classList.add("logo_game--apearTitleGame");
+   console.log("DOM loaded");
+});
 document.querySelector(".start__btn").addEventListener("click", () => {
    document.querySelector(".settings").classList.remove("hidden-modal");
    document.querySelector(".start").classList.add("hidden-modal");

@@ -13,21 +13,25 @@
 
 <body>
   <main class="main">
-   <div id="video-bg">
+    <div id="video-bg">
       <video muted width="100%" height="auto" preload="auto" autoplay="autoplay">
-          <source src="./video/background_video.mp4" type="video/mp4"></source>
+        <source src="./video/background_video.mp4" type="video/mp4">
+        </source>
       </video>
-  </div>
+    </div>
     <h1 class="logo logo_game">cards</h1>
     <h2 class="logo logo_team">by hope team</h2>
-    <button class="settings_btn settings_btn--js"><svg class="settings_btn_img"class="settings-modal__audio-ico hidden-modal">
-      <use href='./img/symbol-defs.svg#icon-cog'></use>
-    </svg></button>
+    <button class="settings_btn settings_btn--js"><svg class="settings_btn_img"
+        class="settings-modal__audio-ico hidden-modal">
+        <use href='./img/symbol-defs.svg#icon-cog'></use>
+      </svg></button>
     <section class="start modal">
       <div class="start__controls-wrapper"> <button type="button"
-          class="start__author start__author--js start__open-modal start__controls"> A </button> <button class="start__btn start__open-modal"
-            type="button"> <span class="start__btn-text">play</span> </button><button type="button"
-            class="start__how-to-play start__how-to-play--js start__open-modal            start__controls">?</button> </div>
+          class="start__author start__author--js start__open-modal start__controls"> A </button> <button
+          class="start__btn start__open-modal" type="button"> <span class="start__btn-text">play</span> </button><button
+          type="button"
+          class="start__how-to-play start__how-to-play--js start__open-modal            start__controls">?</button>
+      </div>
     </section>
     <section id="how-to-play" class="backdrop_how-to-play_modal modal hidden-modal">
       <div class="how-to-play modal">
@@ -74,8 +78,7 @@
             <div class="authors_card">
               <picture>
                 <source srcset="./img/max.webp" type="image/webp">
-                <img class="authors_img" src="./img/max.jpg"
-                  alt="Max">
+                <img class="authors_img" src="./img/max.jpg" alt="Max">
               </picture>
               <h4 class="authors_name"> Max Popsuy </h4>
               <p class="authors_text"> 12 years old. Live in Kiev. </p>
@@ -99,8 +102,7 @@
             <div class="authors_card">
               <picture>
                 <source srcset="./img/Igor.webp" type="image/webp">
-                <img class="authors_img" src="./img/igor.jpg"
-                  alt="Igor">
+                <img class="authors_img" src="./img/igor.jpg" alt="Igor">
               </picture>
               <h4 class="authors_name">Ihor Yakibiuk</h4>
               <p class="authors_text"> Man who study Front_End developing. </p>
@@ -117,18 +119,20 @@
         </div>
       </div>
     </section>
-    
+
     <section class="settings modal hidden-modal">
-       <div class="btn_game_control_wrapper">
-          <button type="button" class="start__author--js start_open-modal start_controls"> A </button>
-        <button type="button"class="start__how-to-play--js start_open-modal start_how-to-play start_controls">?</button> 
-        
-        </div> 
+      <div class="btn_game_control_wrapper">
+        <button type="button" class="start__author--js start_open-modal start_controls"> A </button>
+        <button type="button"
+          class="start__how-to-play--js start_open-modal start_how-to-play start_controls">?</button>
+
+      </div>
       <div class="settings__menu">
         <div class="settings__type-wrapper">
           <div data-type="singlePlayer" class="settings__type            settings__type--active"> <span
               data-type="singlePlayer" class="game-type__text">Single player</span> </div>
-          <div data-type="multiPlayer" class="settings__type"> <span data-type="multiPlayer" class="game-type__text">Multi
+          <div data-type="multiPlayer" class="settings__type"> <span data-type="multiPlayer"
+              class="game-type__text">Multi
               player</span> </div>
           <div data-type="arcade" class="settings__type"> <span data-type="arcade" class="game-type__text">Arcade</span>
           </div>
@@ -218,9 +222,9 @@
     </section>
     <section id="pause" class="pause hidden-modal modal">
       <h2 class="pause__headline">Game paused!</h2>
-        <svg class="pause-modal__close-btn">
-          <use href='./img/icons.svg#icon-cross'></use>
-        </svg>
+      <svg class="pause-modal__close-btn">
+        <use href='./img/icons.svg#icon-cross'></use>
+      </svg>
       <div class="pause__wrapper">
         <button class="pause__btn pause__resume">Resume</button>
         <button class="pause__btn pause__back-to-menu">Back to menu</button>
@@ -231,8 +235,8 @@
     <div class="game__congratulation hidden"></div>
     <section class="game hidden-modal">
       <svg class="game__pause hidden">
-          <use href='./img/icons.svg#icon-pause'></use>
-        </svg>
+        <use href='./img/icons.svg#icon-pause'></use>
+      </svg>
       <!-- <div class="game__counters-wrapper"> -->
       <div class="game__player-counter hidden game__player-counter--1">0</div>
       <div class="game__player-counter hidden game__player-counter--2">0</div>
