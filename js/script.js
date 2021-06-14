@@ -14,6 +14,7 @@ window.localStorage.setItem("level", window.localStorage.getItem("level") || 1);
 window.localStorage.setItem("volume", window.localStorage.getItem("volume") || 1);
 window.localStorage.setItem("bg", window.localStorage.getItem("bg") || 1);
 refs.volume = +window.localStorage.getItem("volume");
+refs.bgVideo = document.querySelector("#video-bg");
 document.querySelector(".main").style.backgroundImage = `url(./img/bg${localStorage.getItem("bg")}.jpg)`;
 // document.addEventListener("DOMContentLoaded", () => {
 //    document.querySelector(".logo_team").classList.add("logo_game--apearLogoTeam");
@@ -25,12 +26,18 @@ window.onload = function () {
    document.querySelector(".logo_game").classList.add("logo_game--apearTitleGame");
    console.log("DOM loaded");
 };
+// refs.bgVideo.firstChild.addEventListener("canplay", () => {
+   // document.querySelector(".logo_team").classList.add("logo_game--apearLogoTeam");
+   // document.querySelector(".logo_game").classList.add("logo_game--apearTitleGame");
+   // console.log("DOM loaded");
+// });
 document.querySelector(".start__btn").addEventListener("click", () => {
    document.querySelector(".settings").classList.remove("hidden-modal");
    document.querySelector(".start").classList.add("hidden-modal");
    document.querySelector(".audio__main-theme").play();
-   document.querySelector("#video-bg").classList.add("hidden-modal");
+   refs.bgVideo.classList.add("hidden-modal");
    document.querySelectorAll(".logo").forEach((item) => item.classList.add("hidden-modal"));
+   setTimeout(() => refs.bgVideo.style.display = "none", 500);
 });
 const keyCloseModal = (event) => {
    if (event.code === "Escape") {
