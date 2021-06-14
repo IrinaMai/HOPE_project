@@ -122,7 +122,7 @@
    opacity: 0;
 }
 .logo_game--apearTitleGame{
-   animation: apearTitleGame 5.4s linear;
+   animation: apearTitleGame 5.35s linear;
    opacity: 1;
 
 }
@@ -164,7 +164,7 @@
    } */
    92% {
       opacity: 1;
-      transform: translate(-50%, -50%) scale(2);
+      transform: translate(-50%, -50%) scale(1.5);
    }
 
    /* 99% {
@@ -189,7 +189,7 @@
    /* animation: apearLogoTeam 8s linear; */
 }
 .logo_game--apearLogoTeam{
-   animation: apearLogoTeam 6.5s linear;
+   animation: apearLogoTeam 6.8s linear;
    opacity: 1;
 
 }
@@ -257,7 +257,7 @@
 @media screen and (max-width: 1500px) {
    .logo_team {
       right: 5%;
-      animation: apearLogoTeam 6.5s linear;
+      animation: apearLogoTeam 6.8s linear;
    }
 }
 
@@ -293,7 +293,7 @@
 
    .logo_team {
       right: -20%;
-      animation: apearLogoTeam 6.5s linear;
+      animation: apearLogoTeam 6.8s linear;
    }
 
    /* @keyframes apearLogoTeam {

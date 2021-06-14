@@ -250,3 +250,4 @@ pauseBtnRef.addEventListener("click", () => {
 //----------------------------------------------------------------
 document.querySelector(".pause__resume").addEventListener("click", (event) => event.currentTarget.parentNode.parentNode.classList.add("hidden-modal"));
 document.querySelector(".pause__back-to-menu").addEventListener("click", returnToMenu);
+document.querySelector(".arcade__video").style.display='none';
