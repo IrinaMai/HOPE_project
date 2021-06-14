@@ -21,15 +21,28 @@ document.querySelector(".main").style.backgroundImage = `url(./img/bg${localStor
 //    document.querySelector(".logo_game").classList.add("logo_game--apearTitleGame");
 //    console.log("DOM loaded");
 // });
-window.onload = function () {
-   document.querySelector(".logo_team").classList.add("logo_game--apearLogoTeam");
-   document.querySelector(".logo_game").classList.add("logo_game--apearTitleGame");
-   console.log("DOM loaded");
-};
+// window.onload = function () {
+//    document.querySelector(".logo_team").classList.add("logo_game--apearLogoTeam");
+//    document.querySelector(".logo_game").classList.add("logo_game--apearTitleGame");
+//    console.log("DOM loaded");
+// };
+function checkBuffer(videoRef) {
+   console.log(videoRef.buffered.end(0));
+   if (videoRef.buffered.end(0) > 5) {
+      console.log(videoRef.buffered.end(0));
+      document.querySelector(".logo_team").classList.add("logo_game--apearLogoTeam");
+      document.querySelector(".logo_game").classList.add("logo_game--apearTitleGame");
+      videoRef.play();
+      clearInterval(bufferInterval);
+   }
+}
+console.log(refs.bgVideo.firstElementChild.buffered.end(0));
+
+const bufferInterval = setInterval(checkBuffer, 100, refs.bgVideo.firstElementChild);
 // refs.bgVideo.firstChild.addEventListener("canplay", () => {
-   // document.querySelector(".logo_team").classList.add("logo_game--apearLogoTeam");
-   // document.querySelector(".logo_game").classList.add("logo_game--apearTitleGame");
-   // console.log("DOM loaded");
+// document.querySelector(".logo_team").classList.add("logo_game--apearLogoTeam");
+// document.querySelector(".logo_game").classList.add("logo_game--apearTitleGame");
+// console.log("DOM loaded");
 // });
 document.querySelector(".start__btn").addEventListener("click", () => {
    document.querySelector(".settings").classList.remove("hidden-modal");
@@ -37,7 +50,7 @@ document.querySelector(".start__btn").addEventListener("click", () => {
    document.querySelector(".audio__main-theme").play();
    refs.bgVideo.classList.add("hidden-modal");
    document.querySelectorAll(".logo").forEach((item) => item.classList.add("hidden-modal"));
-   setTimeout(() => refs.bgVideo.style.display = "none", 500);
+   setTimeout(() => (refs.bgVideo.style.display = "none"), 500);
 });
 const keyCloseModal = (event) => {
    if (event.code === "Escape") {
@@ -250,4 +263,4 @@ pauseBtnRef.addEventListener("click", () => {
 //----------------------------------------------------------------
 document.querySelector(".pause__resume").addEventListener("click", (event) => event.currentTarget.parentNode.parentNode.classList.add("hidden-modal"));
 document.querySelector(".pause__back-to-menu").addEventListener("click", returnToMenu);
-document.querySelector(".arcade__video").style.display='none';
+document.querySelector(".arcade__video").style.display = "none";
