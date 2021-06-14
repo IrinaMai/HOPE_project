@@ -1,7 +1,7 @@
 import cards from "./cards.js";
 import { startGame } from "./functions.js";
 import { returnToMenu } from "./functions.js";
-import { randomGenerateGifs } from "./functions.js";
+
 const refs = {};
 refs.containerRef = document.querySelector(".card-container");
 refs.settingsRef = document.querySelector(".settings");
@@ -15,11 +15,16 @@ window.localStorage.setItem("volume", window.localStorage.getItem("volume") || 1
 window.localStorage.setItem("bg", window.localStorage.getItem("bg") || 1);
 refs.volume = +window.localStorage.getItem("volume");
 document.querySelector(".main").style.backgroundImage = `url(./img/bg${localStorage.getItem("bg")}.jpg)`;
-document.addEventListener("DOMContentLoaded", () => {
+// document.addEventListener("DOMContentLoaded", () => {
+//    document.querySelector(".logo_team").classList.add("logo_game--apearLogoTeam");
+//    document.querySelector(".logo_game").classList.add("logo_game--apearTitleGame");
+//    console.log("DOM loaded");
+// });
+window.onload = function () {
    document.querySelector(".logo_team").classList.add("logo_game--apearLogoTeam");
    document.querySelector(".logo_game").classList.add("logo_game--apearTitleGame");
    console.log("DOM loaded");
-});
+};
 document.querySelector(".start__btn").addEventListener("click", () => {
    document.querySelector(".settings").classList.remove("hidden-modal");
    document.querySelector(".start").classList.add("hidden-modal");
