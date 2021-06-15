@@ -239,7 +239,7 @@ export const startGame = (cardsAmount, cards, containerRef, timerCount, playerAm
 
       // баг із паузою
 
-      // window.addEventListener("keydown", checkPause);
+      window.addEventListener("keydown", checkPause);
 
    }, 5400); //5400
 
@@ -247,6 +247,7 @@ export const startGame = (cardsAmount, cards, containerRef, timerCount, playerAm
 
 // закінчує гру
 const endGame = (timerCount, cardsAmount, gameType, currentLevel, event) => {
+   window.removeEventListener("keydown", checkPause);
    pauseBtnRef.classList.remove("game__pause--multiPlayer");
    document.querySelector(".audio__little-time").pause();
    document.querySelector(".audio__little-time").currentTime = 0;
