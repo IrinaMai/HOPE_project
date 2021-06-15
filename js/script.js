@@ -21,25 +21,26 @@ document.querySelector(".main").style.backgroundImage = `url(./img/bg${localStor
 //    document.querySelector(".logo_game").classList.add("logo_game--apearTitleGame");
 //    console.log("DOM loaded");
 // });
-// window.onload = function () {
-//    document.querySelector(".logo_team").classList.add("logo_game--apearLogoTeam");
-//    document.querySelector(".logo_game").classList.add("logo_game--apearTitleGame");
-//    console.log("DOM loaded");
-// };
-function checkBuffer(videoRef) {
-   console.log(videoRef.buffered.start(0));
-   console.log(videoRef.buffered.end(0));
-   if (videoRef.buffered.end(0) > 4) {
-      console.log(videoRef.buffered.end(0));
-      document.querySelector(".logo_game").classList.add("logo_game--apearTitleGame");
-      document.querySelector(".logo_team").classList.add("logo_game--apearLogoTeam");
-      videoRef.play();
-      clearInterval(bufferInterval);
-   }
-}
-console.log(refs.bgVideo.firstElementChild.buffered.end(0));
+window.onload = function () {
+   document.querySelector(".logo_team").classList.add("logo_game--apearLogoTeam");
+   document.querySelector(".logo_game").classList.add("logo_game--apearTitleGame");
+   videoRef.play();
+   console.log("DOM loaded");
+};
+// function checkBuffer(videoRef) {
+//    console.log(videoRef.buffered.start(0));
+//    console.log(videoRef.buffered.end(0));
+//    if (videoRef.buffered.end(0) > 4) {
+//       console.log(videoRef.buffered.end(0));
+//       document.querySelector(".logo_game").classList.add("logo_game--apearTitleGame");
+//       document.querySelector(".logo_team").classList.add("logo_game--apearLogoTeam");
+//       videoRef.play();
+//       clearInterval(bufferInterval);
+//    }
+// }
+// console.log(refs.bgVideo.firstElementChild.buffered.end(0));
 
-const bufferInterval = setInterval(checkBuffer, 200, refs.bgVideo.firstElementChild);
+// const bufferInterval = setInterval(checkBuffer, 200, refs.bgVideo.firstElementChild);
 // refs.bgVideo.firstChild.addEventListener("canplay", () => {
 // document.querySelector(".logo_team").classList.add("logo_game--apearLogoTeam");
 // document.querySelector(".logo_game").classList.add("logo_game--apearTitleGame");
