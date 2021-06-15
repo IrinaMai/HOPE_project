@@ -38,7 +38,7 @@ function checkBuffer(videoRef) {
 }
 console.log(refs.bgVideo.firstElementChild.buffered.end(0));
 
-const bufferInterval = setInterval(checkBuffer, 100, refs.bgVideo.firstElementChild);
+const bufferInterval = setInterval(checkBuffer, 200, refs.bgVideo.firstElementChild);
 // refs.bgVideo.firstChild.addEventListener("canplay", () => {
 // document.querySelector(".logo_team").classList.add("logo_game--apearLogoTeam");
 // document.querySelector(".logo_game").classList.add("logo_game--apearTitleGame");
@@ -98,7 +98,7 @@ document.querySelectorAll(".start__how-to-play--js").forEach((btn) =>
    btn.addEventListener("click", () => {
       document.querySelector(".backdrop_how-to-play_modal").classList.remove("hidden-modal");
       window.addEventListener("keydown", keyCloseModal2);
-      document.querySelector(".audio__main-theme").play();
+      if (!document.querySelector(".start").classList.contains("hidden-modal")) document.querySelector(".audio__main-theme").play();
    })
 );
 document.querySelectorAll(".start__author--js").forEach((btn) =>
@@ -131,8 +131,10 @@ document.querySelectorAll(".settings__type").forEach((type) => {
       event.currentTarget.classList.add("settings__type--active");
       if (event.target.dataset.type === "singlePlayer") {
          refs.playerAmount = 0;
+         refs.cardsAmount = +[...document.querySelectorAll(".count-cards__wrapper")[0].children].find((btn) => btn.classList.contains("settings__btn--choosed")).dataset.count;
       }
       if (event.target.dataset.type === "multiPlayer") {
+         refs.cardsAmount = +[...document.querySelectorAll(".count-cards__wrapper")[1].children].find((btn) => btn.classList.contains("settings__btn--choosed")).dataset.count;
          refs.playerAmount = [...document.querySelector(".count-player__wrapper").children].find((btn) => btn.classList.contains("settings__btn--choosed")).dataset.count;
       }
       if (event.currentTarget.dataset.type === "arcade") {
@@ -198,7 +200,6 @@ document.querySelectorAll(".win__replay").forEach((btn) =>
       btn.parentNode.parentNode.parentNode.classList.add("hidden-modal");
       document.querySelector(".game__congratulation").classList.add("hidden");
       document.querySelector(".audio__arcade_total_win").pause();
-
    })
 );
 document.querySelector(".settings__start-btn").addEventListener("click", function () {

@@ -8,5 +8,5 @@ export default [
   { time:90,cardsAmount:24,},
   { time:70,cardsAmount:24,},
   { time:180,cardsAmount:36,},
-  { time:120,cardsAmount:12,},
-]
+  { time:120,cardsAmount:36,},
+] 

@@ -230,11 +230,19 @@ export const startGame = (cardsAmount, cards, containerRef, timerCount, playerAm
          timerRef.classList.remove("hidden-modal");
          timer(timerCount, minutesRef, secondsRef, cardsAmount);
       }
+
       document.querySelector(".audio__game-play").currentTime = 0;
       document.querySelector(".audio__game-play").play();
       pauseBtnRef.classList.remove("hidden");
       gamePlay(containerRef, playerAmount, gameType, currentLevel);
+
+
+      // баг із паузою
+
+      // window.addEventListener("keydown", checkPause);
+
    }, 5400); //5400
+
 };
 
 // закінчує гру
@@ -330,3 +338,7 @@ export const randomGenerateGifs = (gifRef) => {
   </picture>`;
    gifRef.innerHTML = string;
 };
+
+const checkPause = () => {console.log(event.code);
+   if (event.code === "Space") document.querySelector(".pause").classList.remove("hidden-modal");
+}
