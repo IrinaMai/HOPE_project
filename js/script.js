@@ -180,6 +180,7 @@ document.querySelectorAll(".win__open-menu").forEach((btn) => {
       document.querySelector(".audio__main-theme").currentTime = 0;
       document.querySelector(".audio__main-theme").play();
       btn.parentNode.parentNode.parentNode.classList.add("hidden-modal");
+      document.querySelector(".audio__arcade_total_win").pause();
    });
 });
 document.querySelector(".win__next-level").addEventListener("click", (event) => {
@@ -196,6 +197,8 @@ document.querySelectorAll(".win__replay").forEach((btn) =>
       startGame(refs.cardsAmount, cards, refs.containerRef, refs.timerCount, refs.playerAmount, refs.gameType, refs.currentLevel);
       btn.parentNode.parentNode.parentNode.classList.add("hidden-modal");
       document.querySelector(".game__congratulation").classList.add("hidden");
+      document.querySelector(".audio__arcade_total_win").pause();
+
    })
 );
 document.querySelector(".settings__start-btn").addEventListener("click", function () {

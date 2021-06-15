@@ -272,14 +272,17 @@ const endGame = (timerCount, cardsAmount, gameType, currentLevel, event) => {
       state.gameResult = "";
    } else {
       document.querySelector(".game__congratulation").classList.remove("hidden");
-      document.querySelector(".audio__won").play();
       if (currentLevel === 10) {
          document.querySelector(".win__arcade").classList.remove("hidden-modal");
          document.querySelector(".arcade__video").style.display = "block";
          document.querySelector(".arcade__video").currentTime = 0;
          document.querySelector(".arcade__video").play();
+         document.querySelector(".audio__arcade_total_win").currentTime = 0;
+      document.querySelector(".audio__arcade_total_win").play();
+
          return;
       }
+      document.querySelector(".audio__won").play();
       gameType === "arcade" ? randomGenerateGifs(document.querySelector(".win__gif--arcade")) : randomGenerateGifs(document.querySelector(".win__gif--non-arcade"));
       gameType === "arcade" ? document.querySelector(".arcade").classList.remove("hidden-modal") : document.querySelector(".win").classList.remove("hidden-modal");
    }
