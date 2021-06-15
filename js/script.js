@@ -28,10 +28,10 @@ document.querySelector(".main").style.backgroundImage = `url(./img/bg${localStor
 // };
 function checkBuffer(videoRef) {
    console.log(videoRef.buffered.end(0));
-   if (videoRef.buffered.end(0) > 5) {
+   if (videoRef.buffered.end(0) > 4) {
       console.log(videoRef.buffered.end(0));
-      document.querySelector(".logo_team").classList.add("logo_game--apearLogoTeam");
       document.querySelector(".logo_game").classList.add("logo_game--apearTitleGame");
+      document.querySelector(".logo_team").classList.add("logo_game--apearLogoTeam");
       videoRef.play();
       clearInterval(bufferInterval);
    }
