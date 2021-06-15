@@ -27,6 +27,7 @@ document.querySelector(".main").style.backgroundImage = `url(./img/bg${localStor
 //    console.log("DOM loaded");
 // };
 function checkBuffer(videoRef) {
+   console.log(videoRef.buffered.start(0));
    console.log(videoRef.buffered.end(0));
    if (videoRef.buffered.end(0) > 4) {
       console.log(videoRef.buffered.end(0));

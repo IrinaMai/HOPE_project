@@ -176,6 +176,12 @@ const gamePlay = (container, playerAmount, gameType, currentLevel) => {
       playerCount.forEach((count) => (count.textContent = 0));
    }
 };
+const checkPause = (event) => {
+   console.log(event.code);
+   if (event.code === "Space") {
+      document.querySelector(".pause").classList.remove("hidden-modal");
+   }
+};
 
 // розпочинає гру із заданими параметрами
 
@@ -236,13 +242,10 @@ export const startGame = (cardsAmount, cards, containerRef, timerCount, playerAm
       pauseBtnRef.classList.remove("hidden");
       gamePlay(containerRef, playerAmount, gameType, currentLevel);
 
-
       // баг із паузою
 
       window.addEventListener("keydown", checkPause);
-
    }, 5400); //5400
-
 };
 
 // закінчує гру
@@ -287,7 +290,7 @@ const endGame = (timerCount, cardsAmount, gameType, currentLevel, event) => {
          document.querySelector(".arcade__video").currentTime = 0;
          document.querySelector(".arcade__video").play();
          document.querySelector(".audio__arcade_total_win").currentTime = 0;
-      document.querySelector(".audio__arcade_total_win").play();
+         document.querySelector(".audio__arcade_total_win").play();
 
          return;
       }
@@ -323,9 +326,12 @@ const timer = (timerCount, minutesRef, secondsRef, cardsAmount) => {
    if (timerCount < 0) {
       endGame(timerCount, funcGlob.cardsAmount);
    } else {
-      if (pauseRef.classList.contains("hidden-modal")) timerCount--;
-      minutesRef.innerHTML = Math.floor(minutes);
-      secondsRef.innerHTML = seconds;
+      if (pauseRef.classList.contains("hidden-modal")) {
+         minutesRef.innerHTML = Math.floor(minutes);
+         secondsRef.innerHTML = seconds;
+         timerCount--;
+      }
+
       setTimeout(timer, 1000, timerCount, minutesRef, secondsRef);
    }
 };
@@ -340,6 +346,3 @@ export const randomGenerateGifs = (gifRef) => {
    gifRef.innerHTML = string;
 };
 
-const checkPause = () => {console.log(event.code);
-   if (event.code === "Space") document.querySelector(".pause").classList.remove("hidden-modal");
-}
