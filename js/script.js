@@ -24,7 +24,7 @@ document.querySelector(".main").style.backgroundImage = `url(./img/bg${localStor
 window.onload = function () {
    document.querySelector(".logo_team").classList.add("logo_game--apearLogoTeam");
    document.querySelector(".logo_game").classList.add("logo_game--apearTitleGame");
-   videoRef.play();
+   refs.bgVideo.firstElementChild.play();
    console.log("DOM loaded");
 };
 // function checkBuffer(videoRef) {
