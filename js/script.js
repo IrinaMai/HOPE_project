@@ -241,7 +241,12 @@ document.querySelector(".settings-modal__background-wrapper").addEventListener("
    event.target.classList.add("settings-modal__background--active");
    document.querySelector(".main").style.backgroundImage = `url(./img/bg${event.target.dataset.bg}.jpg)`;
 });
-
+document.querySelector(".settings-modal__flags-wrapper").addEventListener("click", (event) => {
+   if (!event.target.dataset.lang) return;
+   window.localStorage.setItem("language", event.target.dataset.lang);
+   event.target.parentNode.querySelector(".settings-modal__flags-btn--active").classList.remove("settings-modal__flags-btn--active");
+   event.target.classList.add("settings-modal__flags-btn--active");
+});
 // pause -----------------------------------------------------------
 const pauseBtnRef = document.querySelector(".game__pause");
 const pauseModalRef = document.querySelector(".pause");

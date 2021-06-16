@@ -146,17 +146,35 @@
    border: 3px solid var(--main-blue);
    border-radius: 7px;
    transition: 200ms linear;
+   background-size: cover;
+   background-position: center;
+}
+.settings-modal__flags-btn:nth-child(1){
+   background-image: url(../img/flag/gb.svg);
+
+}.settings-modal__flags-btn:nth-child(2){
+   background-image: url(../img/flag/ua.svg);
+
+}.settings-modal__flags-btn:nth-child(3){
+   background-image: url(../img/flag/de.svg);
+
+}.settings-modal__flags-btn:nth-child(4){
+   background-image: url(../img/flag/pl.svg);
+
+}.settings-modal__flags-btn:nth-child(5){
+   background-image: url(../img/flag/jp.svg);
+
 }
 .settings-modal__flags-btn--active {
    border: 3px solid var(--main-yellow);
    transform: scale(1.3);
 }
-.settings-modal__flags {
+/* .settings-modal__flags {
    object-fit: cover;
    height: 100%;
    width: 100%;
    border-radius: 3px;
-}
+} */
 @media screen and (max-height: 800px) {
    .settings-modal__caption {
       font-size: 20px;
