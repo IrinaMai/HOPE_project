@@ -1,6 +1,11 @@
 // генерує в випадкові послідовності картки (приймає кількість карток, масив карток та посилання куди вставити картки)
 import level from "./level.js";
 import gifArray from "./gifs.js";
+import { enLanguage } from "./language.js";
+import { uaLanguage } from "./language.js";
+import { plLanguage } from "./language.js";
+import { deLanguage } from "./language.js";
+import { jpLanguage } from "./language.js";
 
 const pauseRef = document.querySelector("#pause");
 const pauseBtnRef = document.querySelector(".game__pause");
@@ -346,3 +351,73 @@ export const randomGenerateGifs = (gifRef) => {
    gifRef.innerHTML = string;
 };
 
+export const changeLanguageFn = (language) => {
+   document.querySelector(".logo_game").textContent = language.subtitleGame;
+   document.querySelector(".logo_team").textContent = language.subtitleAuthors;
+   document.querySelector(".start__btn-text").textContent = language.buttonTitle;
+   document.querySelector(".how-to-play__headline").textContent = language.howToPlayModalTitle;
+   document.querySelector(".how-to-play__text").textContent = language.howToPlayModalText;
+   document.querySelector(".authors_title").textContent = language.authorsModalTitle;
+   document.querySelector(".max_title-js").textContent = language.authorsMaxTitle;
+   document.querySelector(".max_text-js").textContent = language.authorsMaxText;
+   document.querySelector(".maria_title-js").textContent = language.authorsMariaTitle;
+   document.querySelector(".maria_text-js").textContent = language.authorsMariaText;
+   document.querySelector(".dima_title-js").textContent = language.authorsDmytroTitle;
+   document.querySelector(".dima_text-js").textContent = language.authorsDmytroText;
+   document.querySelector(".ihor_title-js").textContent = language.authorsIgorTitle;
+   document.querySelector(".ihor_text-js").textContent = language.authorsIgorText;
+   document.querySelector(".authors_footer__text").textContent = language.authorsFooterText;
+   document.querySelector(".settings-modal__headline").textContent = language.settingsModalTitle;
+   document.querySelector(".settings-modal__caption").textContent = language.settingsModalSubtitleSound;
+   document.querySelector(".settings-modal-language").textContent = language.settingsModalSubtitleLanguage;
+   document.querySelector(".settings-modal__bg").textContent = language.settingsModalSubtitleBackground;
+   document.querySelector(".game-type__text-single").textContent = language.startGameModalSinglePlayerSubtitle;
+   document.querySelector(".game-type__text-multi").textContent = language.startGameModalMultiPlayerSubtitle;
+   document.querySelector(".game-type__text-arcade").textContent = language.startGameModalArcadeSubtitle;
+   document.querySelector(".settings__headline").textContent = language.startGameModalAmountOfCardsSubtitle;
+   document.querySelector(".settings__headline-time").textContent = language.startGameModalAmountOfTimeSubtitle;
+   document.querySelector(".settings__btn05").textContent = language.buttonTitleTime05;
+   document.querySelector(".settings__btn1").textContent = language.buttonTitleTime1;
+   document.querySelector(".settings__btn2").textContent = language.buttonTitleTime2;
+   document.querySelector(".settings__btn3").textContent = language.buttonTitleTime3;
+   document.querySelector(".settings__headline-amount-cards").textContent = language.startGameModalAmountOfCardsSubtitle;
+   document.querySelector(".settings__headline-amount-players").textContent = language.multiPlayerAmountOfPlayers;
+   document.querySelector(".settings__headline-level").textContent = language.arcadeLevelSelect;
+   document.querySelector(".settings__start-btn").textContent = language.buttonStartTitle;
+   document.querySelector(".pause__headline").textContent = language.modalPausedTitle;
+   document.querySelector(".pause__resume").textContent = language.modalButtonResumeTitle;
+   document.querySelector(".pause__back-to-menu").textContent = language.modalButtonBackToMenuTitle;
+   document.querySelector(".settings_btn-text--js").textContent = language.modalButtonSettingsTitle;
+   document.querySelector(".start__how-to-play--js--text").textContent = language.modalButtonHowToPlayTitle;
+   document.querySelector(".game__start-number-text").textContent = language.wordBeforeGame;
+   document.querySelector(".win__headline").textContent = language.winModalTitle;
+   document.querySelector(".win__btn-text").textContent = language.buttonBackToMenu;
+   document.querySelector(".win__btn-text-replay").textContent = language.buttonReplayTitle;
+   document.querySelector(".win__headline-arcade").textContent = language.winModalArcade;
+   document.querySelector(".win__open-menu-js ").textContent = language.winModalArcadeButtonMenuTitle;
+   document.querySelector(".win__btn-text-next-level").textContent = language.winModalArcadeButtonNextLevelTitle;
+   document.querySelector(".lose_headline").textContent = language.lostModalTitle;
+   document.querySelector(".lose-btn-js").textContent = language.modalButtonBackToMenuTitle;
+   document.querySelector(".lose-btn-replay").textContent = language.buttonReplayTitle;
+   document.querySelector(".win__arcade-headline").textContent = language.lastWinArcadeModal;
+   document.querySelector(".win-btn-arcade").textContent = language.buttonBackToMenu;
+   document.querySelector(".win-btn-arcade-replay").textContent = language.buttonReplayTitle;
+};
+
+export const validLanguage = () => {
+   if (window.localStorage.getItem("language") === "gb") {
+      return changeLanguageFn(enLanguage);
+   }
+   if (window.localStorage.getItem("language") === "ua") {
+      return changeLanguageFn(uaLanguage);
+   }
+   if (window.localStorage.getItem("language") === "pl") {
+      return changeLanguageFn(plLanguage);
+   }
+   if (window.localStorage.getItem("language") === "de") {
+      return changeLanguageFn(deLanguage);
+   }
+   if (window.localStorage.getItem("language") === "jp") {
+      return changeLanguageFn(jpLanguage);
+   }
+};

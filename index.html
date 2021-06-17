@@ -78,32 +78,32 @@
                 <source srcset="./img/max.webp" type="image/webp">
                 <img class="authors_img" src="./img/max.jpg" alt="Max">
               </picture>
-              <h4 class="authors_name"> Max Popsuy </h4>
-              <p class="authors_text"> 12 years old. Live in Kiev. </p>
+              <h4 class="authors_name max_title-js"> Max Popsuy </h4>
+              <p class="authors_text max_text-js"> 12 years old. Live in Kiev. </p>
             </div>
             <div class="authors_card">
               <picture>
                 <source srcset="./img/authors_Mari.webp" type="image/webp"><img class="authors_img"
                   src="./img/authors_Mari.png" alt="Mari">
               </picture>
-              <h4 class="authors_name"> Mariia Hrypych </h4>
-              <p class="authors_text">HR manager</p>
+              <h4 class="authors_name maria_title-js"> Mariia Hrypych </h4>
+              <p class="authors_text maria_text-js">HR manager</p>
             </div>
             <div class="authors_card">
               <picture>
                 <source srcset="./img/authors_Dmytro.webp" type="image/webp"><img class="authors_img"
                   src="./img/authors_Dmytro.png" alt="Dmytro">
               </picture>
-              <h4 class="authors_name"> Kolisnyk Dmytro </h4>
-              <p class="authors_text">TeamLead. 16 years old.</p>
+              <h4 class="authors_name dima_title-js"> Kolisnyk Dmytro </h4>
+              <p class="authors_text dima_text-js">TeamLead. 16 years old.</p>
             </div>
             <div class="authors_card">
               <picture>
                 <source srcset="./img/Igor.webp" type="image/webp">
                 <img class="authors_img" src="./img/igor.jpg" alt="Igor">
               </picture>
-              <h4 class="authors_name">Ihor Yakibiuk</h4>
-              <p class="authors_text"> Man who study Front_End developing. </p>
+              <h4 class="authors_name ihor_title-js">Ihor Yakibiuk</h4>
+              <p class="authors_text ihor_text-js"> Man who study Front_End developing. </p>
             </div>
           </div>
         </div>
@@ -128,11 +128,11 @@
       <div class="settings__menu">
         <div class="settings__type-wrapper">
           <div data-type="singlePlayer" class="settings__type            settings__type--active"> <span
-              data-type="singlePlayer" class="game-type__text">Single player</span> </div>
+              data-type="singlePlayer" class="game-type__text game-type__text-single">Single player</span> </div>
           <div data-type="multiPlayer" class="settings__type"> <span data-type="multiPlayer"
-              class="game-type__text">Multi
+              class="game-type__text game-type__text-multi">Multi
               player</span> </div>
-          <div data-type="arcade" class="settings__type"> <span data-type="arcade" class="game-type__text">Arcade</span>
+          <div data-type="arcade" class="settings__type"> <span data-type="arcade" class="game-type__text game-type__text-arcade">Arcade</span>
           </div>
         </div>
         <div class="settings__wrapper">
@@ -146,17 +146,17 @@
                   24</button><button type="button" class="settings__btn count-btn" data-count="36"> 36 </button> </div>
             </div>
             <div class="settings__count-timer">
-              <h2 class="settings__headline">Select the amount of time</h2>
+              <h2 class="settings__headline settings__headline-time">Select the amount of time</h2>
               <div class="count-timer__wrapper settings__wrappers"> <button type="button"
-                  class="settings__btn count-timer" data-count="30"> 0.5 min</button><button type="button"
-                  class="settings__btn count-timer settings__btn--choosed" data-count="60"> 1 min</button><button
-                  type="button" class="settings__btn count-timer" data-count="120"> 2 min</button><button type="button"
-                  class="settings__btn count-timer" data-count="180"> 3 min </button> </div>
+                  class="settings__btn settings__btn05 count-timer" data-count="30"> 0.5 min</button><button type="button"
+                  class="settings__btn count-timer settings__btn--choosed settings__btn1" data-count="60"> 1 min</button><button
+                  type="button" class="settings__btn count-timer settings__btn2" data-count="120"> 2 min</button><button type="button"
+                  class="settings__btn count-timer settings__btn3" data-count="180"> 3 min </button> </div>
             </div>
           </div>
           <div class="settings__by-type settings__multiPlayer hidden-modal">
             <div class="settings__count-cards">
-              <h2 class="settings__headline">Select the amount of cards</h2>
+              <h2 class="settings__headline settings__headline-amount-cards">Select the amount of cards</h2>
               <div class="count-cards__wrapper settings__wrappers"> <button type="button"
                   class="settings__btn                  count-btn settings__btn--choosed"
                   data-count="12">12</button><button type="button" class="settings__btn count-btn" data-count="18">
@@ -164,7 +164,7 @@
                   24</button><button type="button" class="settings__btn count-btn" data-count="36"> 36 </button> </div>
             </div>
             <div class="settings__count-player">
-              <h2 class="settings__headline">Select the number of players</h2>
+              <h2 class="settings__headline settings__headline-amount-players">Select the number of players</h2>
               <div class="count-player__wrapper settings__wrappers"> <button type="button"
                   class="settings__btn count-timer                  settings__btn--choosed" data-count="2">
                   2</button><button type="button" class="settings__btn count-timer" data-count="3"> 3</button><button
@@ -173,7 +173,7 @@
           </div>
           <div class="settings__by-type            settings__arcade hidden-modal">
             <div class="settings__count-cards">
-              <h2 class="settings__headline">Select level</h2>
+              <h2 class="settings__headline settings__headline-level">Select level</h2>
               <div class="arcade__btn-wrapper settings__wrappers"> <button
                   class="settings__btn arcade__btn settings__btn--choosed">1</button> <button
                   class="settings__btn arcade__btn arcade__btn--close">2</button> <button
@@ -206,20 +206,20 @@
           </svg>
 <input type="range" min='0' max='20' class='settings-modal__audio-range'>
         </div>
-        <h3 class="settings-modal__caption">Language</h3>
+        <h3 class="settings-modal__caption settings-modal-language">Language</h3>
 
         <div class="settings-modal__flags-wrapper">
-          <button data-lang='gb' class="settings-modal__flags-btn settings-modal__flags-btn--active">
+          <button data-lang='gb' data-index="1" class="settings-modal__flags-btn">
           </button>
-          <button data-lang='ua' class="settings-modal__flags-btn">
+          <button data-lang='ua' data-index="2" class="settings-modal__flags-btn">
           </button>
-          <button data-lang='de' class="settings-modal__flags-btn">
+          <button data-lang='de' data-index="3" class="settings-modal__flags-btn">
           </button>
-          <button data-lang='pl' class="settings-modal__flags-btn">
+          <button data-lang='pl' data-index="4" class="settings-modal__flags-btn">
           </button>
-          <button data-lang='jp' class="settings-modal__flags-btn">
+          <button data-lang='jp' data-index="5" class="settings-modal__flags-btn">
           </button></div>
-        <h3 class="settings-modal__caption">Background</h3>
+        <h3 class="settings-modal__caption settings-modal__bg">Background</h3>
         <div class="settings-modal__background-wrapper">
           <img src="./img/bg1.jpg" data-bg="1" alt="Background-img" class="settings-modal__background">
           <img src="./img/bg2.jpg" data-bg="2" alt="Background-img" class="settings-modal__background">
@@ -237,8 +237,8 @@
       <div class="pause__wrapper">
         <button class="pause__btn pause__resume">Resume</button>
         <button class="pause__btn pause__back-to-menu">Back to menu</button>
-        <button class="pause__btn settings_btn--js">Settings</button>
-        <button class="pause__btn start__how-to-play--js">How to play</button>
+        <button class="pause__btn settings_btn-text--js">Settings</button>
+        <button class="pause__btn start__how-to-play--js  start__how-to-play--js--text">How to play</button>
       </div>
     </section>
     <div class="game__congratulation hidden"></div>
@@ -253,7 +253,7 @@
       <div class="game__player-counter hidden game__player-counter--4">0</div> <!-- </div> -->
       <div class="game__start-number-wrapper hidden-modal"> <span class="game__start-number hidden-modal">3</span> <span
           class="game__start-number hidden-modal">2</span> <span class="game__start-number hidden-modal">1</span> <span
-          class="game__start-number hidden-modal">GO!</span> </div>
+          class="game__start-number game__start-number-text hidden-modal">GO!</span> </div>
       <div class="game__player-turn hidden"></div>
       <div class="game__card-container-wrapper">
         <div class="card-container"></div>
@@ -269,7 +269,7 @@
         <div class="win__btn-wrapper">
           <button class="win__btn win__open-menu win__open-modal" type="button">
             <span class="win__btn-text">Back to menu</span></button><button class="win__btn win__replay win__open-modal"
-            type="button"> <span class="win__btn-text">Replay</span> </button>
+            type="button"> <span class="win__btn-text win__btn-text-replay">Replay</span> </button>
 
         </div>
         <div class="win__gif win__gif--non-arcade">
@@ -280,9 +280,9 @@
       <h2 class="win__headline win__headline-arcade">You complete stage 1</h2>
       <div class="win__content-wrapper">
         <div class="win__btn-wrapper">
-          <button class="win__btn win__open-menu win__open-modal" type="button"> <span class="win__btn-text">Back to
+          <button class="win__btn win__open-menu win__open-menu-js win__open-modal" type="button"> <span class="win__btn-text">Back to
               menu</span> </button><button class="win__btn win__next-level win__open-modal" type="button"> <span
-              class="win__btn-text">Next
+              class="win__btn-text win__btn-text-next-level">Next
               level</span></button>
         </div>
         <div class="win__gif win__gif--arcade">
@@ -290,13 +290,13 @@
       </div>
     </section>
     <section class="win lose modal hidden-modal">
-      <h2 class="win__headline">You LOST</h2>
+      <h2 class="win__headline lose_headline">You LOST</h2>
       <div class="win__content-wrapper">
         <div class="win__btn-wrapper">
 
           <button class="win__btn win__open-menu win__open-modal" type="button">
-            <span class="win__btn-text">Back to menu</span></button><button class="win__btn win__replay win__open-modal"
-            type="button"> <span class="win__btn-text">Replay</span> </button>
+            <span class="win__btn-text lose-btn-js">Back to menu</span></button><button class="win__btn win__replay win__open-modal"
+            type="button"> <span class="win__btn-text lose-btn-replay">Replay</span> </button>
         </div>
 
         <picture>
@@ -312,9 +312,9 @@
       <div>
         <div class="win__arcade-wrapper">
           <button class="win__btn win__btn--arcade win__open-menu win__open-modal" type="button">
-            <span class="win__btn-text">Back to menu</span></button>
+            <span class="win__btn-text win-btn-arcade">Back to menu</span></button>
           <button class="win__btn win__btn--arcade win__replay win__open-modal" type="button"> <span
-              class="win__btn-text">Replay</span>
+              class="win__btn-text win-btn-arcade-replay">Replay</span>
           </button>
         </div>
       </div>

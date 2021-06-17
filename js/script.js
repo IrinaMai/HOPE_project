@@ -1,6 +1,7 @@
 import cards from "./cards.js";
 import { startGame } from "./functions.js";
 import { returnToMenu } from "./functions.js";
+import { validLanguage } from "./functions.js";
 
 const refs = {};
 refs.containerRef = document.querySelector(".card-container");
@@ -13,6 +14,8 @@ refs.currentLevel = 1;
 window.localStorage.setItem("level", window.localStorage.getItem("level") || 1);
 window.localStorage.setItem("volume", window.localStorage.getItem("volume") || 1);
 window.localStorage.setItem("bg", window.localStorage.getItem("bg") || 1);
+window.localStorage.setItem("language", window.localStorage.getItem("language") || "gb");
+refs.lang = window.localStorage.getItem("language");
 refs.volume = +window.localStorage.getItem("volume");
 refs.bgVideo = document.querySelector("#video-bg");
 document.querySelector(".main").style.backgroundImage = `url(./img/bg${localStorage.getItem("bg")}.jpg)`;
@@ -40,12 +43,6 @@ window.onload = function () {
 // }
 // console.log(refs.bgVideo.firstElementChild.buffered.end(0));
 
-// const bufferInterval = setInterval(checkBuffer, 200, refs.bgVideo.firstElementChild);
-// refs.bgVideo.firstChild.addEventListener("canplay", () => {
-// document.querySelector(".logo_team").classList.add("logo_game--apearLogoTeam");
-// document.querySelector(".logo_game").classList.add("logo_game--apearTitleGame");
-// console.log("DOM loaded");
-// });
 document.querySelector(".start__btn").addEventListener("click", () => {
    document.querySelector(".settings").classList.remove("hidden-modal");
    document.querySelector(".start").classList.add("hidden-modal");
@@ -246,6 +243,15 @@ document.querySelector(".settings-modal__flags-wrapper").addEventListener("click
    window.localStorage.setItem("language", event.target.dataset.lang);
    event.target.parentNode.querySelector(".settings-modal__flags-btn--active").classList.remove("settings-modal__flags-btn--active");
    event.target.classList.add("settings-modal__flags-btn--active");
+});
+validLanguage();
+[...document.querySelector(".settings-modal__flags-wrapper").children].find((lang) => lang.dataset.lang === refs.lang).classList.add("settings-modal__flags-btn--active");
+document.querySelector(".settings-modal__flags-wrapper").addEventListener("click", (event) => {
+   if (!event.target.dataset.lang) return;
+   event.target.parentNode.querySelector(".settings-modal__flags-btn--active").classList.remove("settings-modal__flags-btn--active");
+   event.target.classList.add("settings-modal__flags-btn--active");
+   window.localStorage.setItem("language", event.target.dataset.lang);
+   validLanguage();
 });
 // pause -----------------------------------------------------------
 const pauseBtnRef = document.querySelector(".game__pause");
