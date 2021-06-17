@@ -51,13 +51,13 @@ export const enLanguage = {
 
 export const uaLanguage = {
    subtitleGame: "картки",
-   subtitleAuthors: "командою надії",
+   subtitleAuthors: "команда HOPE",
    buttonTitle: "грати",
    howToPlayModalTitle: "Як Грати?",
-   howToPlayModalText: `Спочатку натисніть кнопку «відтворити». Ви побачите таблицю, де вам потрібно вибрати
+   howToPlayModalText: `Спочатку натисніть кнопку «грати». Ви побачите таблицю, де вам потрібно вибрати
     кількість карток і час. Якщо ви граєте не на самоті, перейдіть до наступної "багатокористувацької" функції, яка знаходиться поруч
-    функція "для одного гравця". Вам потрібно вибрати кількість карт і кількість гравців. Потім клацніть
-    "старт". Ви бачите картки на екрані. Ви повинні знайти дві однакові картки за вибраний вами час.`,
+    функції "для одного гравця". Вам потрібно вибрати кількість карт і кількість гравців. Потім клацніть
+    "почати". Ви бачите картки на екрані. Ви повинні знайти дві однакові картки впродовж обраного вами часу.`,
    authorsModalTitle: "автори цієї гри",
    authorsMaxTitle: "Макс Попсуй",
    authorsMaxText: "12 років. Живу у Києві",
@@ -102,12 +102,12 @@ export const uaLanguage = {
 
 export const plLanguage = {
    subtitleGame: "karty",
-   subtitleAuthors: "przez zespół nadziei",
+   subtitleAuthors: "zrobić przez zespół hope",
    buttonTitle: "grać",
    howToPlayModalTitle: "Jak grać?",
    howToPlayModalText: `Najpierw kliknij przycisk „odtwórz”. Zobaczysz tabelę, w której musisz wybrać
-    liczba kart i czas. Jeśli nie grasz sam, przejdź do następnej funkcji „multiplayer”, która znajduje się obok
-    funkcja „single player”. Musisz wybrać liczbę kart i liczbę graczy. Następnie kliknij
+    liczba kart i czas. Jeśli nie grasz sam, przejdź do następnej funkcji „Tryb wieloosobowy”, która znajduje się obok
+    funkcja „Jeden gracz”. Musisz wybrać liczbę kart i liczbę graczy. Następnie kliknij
     "początek". Widzisz karty na ekranie. Musisz znaleźć dwie identyczne karty na wybrany czas.`,
    authorsModalTitle: "autorzy tej gry.",
    authorsMaxTitle: "Max Popsuy",
@@ -137,10 +137,10 @@ export const plLanguage = {
    buttonStartTitle: "początek",
    modalPausedTitle: "Gra wstrzymana!",
    modalButtonResumeTitle: "Wznawianie",
-   modalButtonBackToMenuTitle: "Back to menu",
-   modalButtonSettingsTitle: "Settings",
-   modalButtonHowToPlayTitle: "How to play",
-   wordBeforeGame: "GO!",
+   modalButtonBackToMenuTitle: "Powrót do menu",
+   modalButtonSettingsTitle: "Ustawienia",
+   modalButtonHowToPlayTitle: "Jak grać",
+   wordBeforeGame: "POJECHALIŚMY!",
    winModalTitle: "You WON!",
    buttonBackToMenu: "Powrót do menu",
    buttonReplayTitle: "Powtórna rozgrywka",

@@ -182,7 +182,7 @@ const gamePlay = (container, playerAmount, gameType, currentLevel) => {
    }
 };
 const checkPause = (event) => {
-   console.log(event.code);
+   // console.log(event.code);
    if (event.code === "Space") {
       document.querySelector(".pause").classList.remove("hidden-modal");
    }
@@ -248,14 +248,13 @@ export const startGame = (cardsAmount, cards, containerRef, timerCount, playerAm
       gamePlay(containerRef, playerAmount, gameType, currentLevel);
 
       // баг із паузою
-
-      window.addEventListener("keydown", checkPause);
+      // window.addEventListener("keydown", checkPause);
    }, 5400); //5400
 };
 
 // закінчує гру
 const endGame = (timerCount, cardsAmount, gameType, currentLevel, event) => {
-   window.removeEventListener("keydown", checkPause);
+   // window.removeEventListener("keydown", checkPause);
    pauseBtnRef.classList.remove("game__pause--multiPlayer");
    document.querySelector(".audio__little-time").pause();
    document.querySelector(".audio__little-time").currentTime = 0;
