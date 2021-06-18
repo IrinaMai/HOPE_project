@@ -104,7 +104,13 @@ const gamePlay = (container, playerAmount, gameType, currentLevel) => {
                   for (let i = 0; i < +window.localStorage.getItem("level"); i++) {
                      btnWrapper.children[i].classList.remove("arcade__btn--close");
                   }
-                  document.querySelector(".win__headline-arcade").textContent = `You complete level ${currentLevel}`;
+                  const arcadeText = document.querySelector(".win__headline-arcade");
+                  console.log(arcadeText.textContent.split(""));
+                  let result = arcadeText.textContent.split("");
+                  const isNull = result.pop();
+                  if (isNull === "0") result.pop();
+                  result = result.join("");
+                  arcadeText.textContent = `${result}${currentLevel}`;
                }
                setTimeout(endGame, 500, 1, container.children.length, gameType, currentLevel);
             }
@@ -182,7 +188,6 @@ const gamePlay = (container, playerAmount, gameType, currentLevel) => {
    }
 };
 const checkPause = (event) => {
-   // console.log(event.code);
    if (event.code === "Space") {
       document.querySelector(".pause").classList.remove("hidden-modal");
    }
@@ -285,6 +290,9 @@ const endGame = (timerCount, cardsAmount, gameType, currentLevel, event) => {
    if (timerCount + 1 === 0) {
       document.querySelector(".audio__lose").play();
       document.querySelector(".lose").classList.remove("hidden-modal");
+      document.querySelectorAll(".arcade__video")[1].style.display = "block";
+      document.querySelectorAll(".arcade__video")[1].currentTime = 0;
+      document.querySelectorAll(".arcade__video")[1].play();
       state.gameResult = "";
    } else {
       document.querySelector(".game__congratulation").classList.remove("hidden");
@@ -393,7 +401,7 @@ export const changeLanguageFn = (language) => {
    document.querySelector(".win__btn-text").textContent = language.buttonBackToMenu;
    document.querySelector(".win__btn-text-replay").textContent = language.buttonReplayTitle;
    document.querySelector(".win__headline-arcade").textContent = language.winModalArcade;
-   document.querySelector(".win__open-menu-js ").textContent = language.winModalArcadeButtonMenuTitle;
+   document.querySelector(".win__open-menu-js").firstElementChild.textContent = language.winModalArcadeButtonMenuTitle;
    document.querySelector(".win__btn-text-next-level").textContent = language.winModalArcadeButtonNextLevelTitle;
    document.querySelector(".lose_headline").textContent = language.lostModalTitle;
    document.querySelector(".lose-btn-js").textContent = language.modalButtonBackToMenuTitle;

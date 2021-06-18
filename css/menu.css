@@ -7,9 +7,9 @@
    z-index: 3;
 }
 .settings__menu {
-  max-width: 780px ;
-  width: 100%;
-  padding-top: 100px;
+   max-width: 780px;
+   width: 100%;
+   padding-top: 100px;
 }
 .settings__wrapper {
    padding: 45px 0 65px;
@@ -166,7 +166,7 @@
    top: 25px;
    right: 25px;
    display: flex;
-   position: absolute;
+   position: fixed;
 }
 .start_controls {
    font-size: 50px;
@@ -208,6 +208,9 @@
       display: flex;
       margin: 0 auto;
    }
+   .game-type__text {
+      font-size: 17px;
+   }
 }
 /* @media screen and (max-height: 750px) {
   .settings {
@@ -225,6 +228,21 @@
       flex-direction: wrap;
       height: 190px;
       align-content: center;
+   }
+   .btn_game_control_wrapper {
+   top: 103px;
+   right: 25px;
+   display: flex;
+   position: fixed;
+}
+.settings__menu{
+   top: 80px;
+   position: relative;
+}
+.start_controls {
+      width: 65px;
+      height: 65px;
+      font-size: 40px;
    }
 }
 
@@ -251,5 +269,8 @@
    }
    .arcade__btn-wrapper {
       height: 300px;
+   }
+   .game-type__text {
+      font-size: 14px;
    }
 }

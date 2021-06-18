@@ -38,7 +38,6 @@
 .win__btn-text {
    display: block;
    transform: skew(10deg);
-   font-size: 40px;
    text-transform: uppercase;
    color: #ffffff;
    font-weight: 800;
@@ -69,7 +68,7 @@
       height: 100px;
    }
    .win__btn-text {
-      font-size: 28px;
+      font-size: 25px;
    }
    .win__img {
       max-width: 450px;
@@ -81,7 +80,7 @@
       height: 100px;
    }
    .win__btn-text {
-      font-size: 28px;
+      font-size: 25px;
    }
    .win__img {
       max-width: 450px;
@@ -186,4 +185,8 @@
    left: 0;
    border-radius: 15px;
    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 100%);
+}
+.lose_headline{
+   font-size: 35px;
+   padding-top: 15px;
 }

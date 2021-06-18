@@ -43,9 +43,9 @@ export const enLanguage = {
    buttonBackToMenu: "Back to menu",
    buttonReplayTitle: "Replay",
    winModalArcade: "You complete stage 1",
-   winModalArcadeButtonMenuTitle: "menu",
+   winModalArcadeButtonMenuTitle: "back to menu",
    winModalArcadeButtonNextLevelTitle: "Next level",
-   lostModalTitle: "You LOST",
+   lostModalTitle: "Don`t mind try again)",
    lastWinArcadeModal: "You Completed this game!",
 };
 
@@ -93,22 +93,22 @@ export const uaLanguage = {
    winModalTitle: "Ви ПЕРЕМОГЛИ!",
    buttonBackToMenu: "Повернутись до меню",
    buttonReplayTitle: "Спробувати ще раз",
-   winModalArcade: "Ви пройшли 1 рівень",
-   winModalArcadeButtonMenuTitle: "меню",
+   winModalArcade: "Ви пройшли рівень 1",
+   winModalArcadeButtonMenuTitle: "повернутися до меню",
    winModalArcadeButtonNextLevelTitle: "Наступний рівень",
-   lostModalTitle: "Ви ПРОГРАЛИ",
+   lostModalTitle: "Не переживай, спробуй знову)",
    lastWinArcadeModal: "Ви закінчили цю гру!",
 };
 
 export const plLanguage = {
    subtitleGame: "karty",
-   subtitleAuthors: "zrobić przez zespół hope",
+   subtitleAuthors: "zrobili przez zespół hope",
    buttonTitle: "grać",
    howToPlayModalTitle: "Jak grać?",
    howToPlayModalText: `Najpierw kliknij przycisk „odtwórz”. Zobaczysz tabelę, w której musisz wybrać
     liczba kart i czas. Jeśli nie grasz sam, przejdź do następnej funkcji „Tryb wieloosobowy”, która znajduje się obok
-    funkcja „Jeden gracz”. Musisz wybrać liczbę kart i liczbę graczy. Następnie kliknij
-    "początek". Widzisz karty na ekranie. Musisz znaleźć dwie identyczne karty na wybrany czas.`,
+    funkcja „Jeden gracz”. Musisz wybrać liczbę kart i liczbę graczy. Następnie klikaj
+    "początek". Widzisz karty na ekranie. Musisz znaleźć dwie identyczne karty za wybrany czas.`,
    authorsModalTitle: "autorzy tej gry.",
    authorsMaxTitle: "Max Popsuy",
    authorsMaxText: "12 lat. Mieszkaj w Kijowie.",
@@ -147,7 +147,7 @@ export const plLanguage = {
    winModalArcade: "Ukończyłeś etap 1",
    winModalArcadeButtonMenuTitle: "menu",
    winModalArcadeButtonNextLevelTitle: "Następny poziom",
-   lostModalTitle: "Przegrałeś",
+   lostModalTitle: "Nie przejmuj się, spróbuj ponownie) ",
    lastWinArcadeModal: "Ukończyłeś tę grę!",
 };
 
@@ -198,7 +198,7 @@ export const deLanguage = {
    winModalArcade: "Sie beenden Stufe 1",
    winModalArcadeButtonMenuTitle: "Speisekarte",
    winModalArcadeButtonNextLevelTitle: "Nächste Stufe",
-   lostModalTitle: "Du hast verloren",
+   lostModalTitle: "Keine Sorge, versuchen Sie es erneut)",
    lastWinArcadeModal: "Du hast dieses Spiel abgeschlossen!",
 };
 
@@ -246,9 +246,9 @@ export const jpLanguage = {
    winModalTitle: "あなたが勝った！",
    buttonBackToMenu: "メニューに戻る",
    buttonReplayTitle: "やり直す",
-   winModalArcade: "ステージ1を完了します",
+   winModalArcade: "ステージを完了します 1",
    winModalArcadeButtonMenuTitle: "メニュー",
    winModalArcadeButtonNextLevelTitle: "次のレベル",
-   lostModalTitle: "あなたが負けた",
+   lostModalTitle: "心配しないで、もう一度やり直してください",
    lastWinArcadeModal: "このゲームを完了しました！",
 };
