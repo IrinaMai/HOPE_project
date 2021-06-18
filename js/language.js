@@ -204,10 +204,10 @@ export const deLanguage = {
 
 export const jpLanguage = {
    subtitleGame: "カード",
-   subtitleAuthors: "希望チームによる",
+   subtitleAuthors: "『希望』チームが作った",
    buttonTitle: "演奏する",
-   howToPlayModalTitle: "遊び方？",
-   howToPlayModalText: `まず、「再生」ボタンをクリックします。を選択する必要がある表が表示されます
+   howToPlayModalTitle: "遊び方",
+   howToPlayModalText: `最初に「再生」ボタンを押って、を選択する必要がある表が表示されます
     カードの数と時間。 一人でプレイしていない場合は、次の「マルチプレイヤー」機能に移動します。
     「シングルプレイヤー」機能。 カードの数とプレイヤーの数を選択する必要があります。次に、をクリックします
     "開始"。 画面にカードが表示されます。あなたはあなたが選んだ時間のために2枚の同じカードを見つけなければなりません。`,
@@ -230,10 +230,10 @@ export const jpLanguage = {
    startGameModalArcadeSubtitle: "アーケード",
    startGameModalAmountOfCardsSubtitle: "カードの数を選択します",
    startGameModalAmountOfTimeSubtitle: "時間の長さを選択してください",
-   buttonTitleTime05: "0.5 min",
-   buttonTitleTime1: "1 min",
-   buttonTitleTime2: "2 min",
-   buttonTitleTime3: "3 min",
+   buttonTitleTime05: "0.5 分",
+   buttonTitleTime1: "1 分",
+   buttonTitleTime2: "2 分",
+   buttonTitleTime3: "3 分",
    multiPlayerAmountOfPlayers: "プレーヤーの数を選択します",
    arcadeLevelSelect: "レベルを選択",
    buttonStartTitle: "開始",
@@ -245,10 +245,10 @@ export const jpLanguage = {
    wordBeforeGame: "GO!",
    winModalTitle: "あなたが勝った！",
    buttonBackToMenu: "メニューに戻る",
-   buttonReplayTitle: "リプレイ",
+   buttonReplayTitle: "やり直す",
    winModalArcade: "ステージ1を完了します",
    winModalArcadeButtonMenuTitle: "メニュー",
-   winModalArcadeButtonNextLevelTitle: "メニュー",
+   winModalArcadeButtonNextLevelTitle: "次のレベル",
    lostModalTitle: "あなたが負けた",
    lastWinArcadeModal: "このゲームを完了しました！",
 };
