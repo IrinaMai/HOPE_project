@@ -17,18 +17,21 @@ window.localStorage.setItem("bg", window.localStorage.getItem("bg") || 1);
 window.localStorage.setItem("language", window.localStorage.getItem("language") || "gb");
 refs.lang = window.localStorage.getItem("language");
 refs.volume = +window.localStorage.getItem("volume");
-refs.bgVideo = document.querySelector("#video-bg");
+refs.bgVideo = document.querySelector("#video--js");
 document.querySelector(".main").style.backgroundImage = `url(./img/bg${localStorage.getItem("bg")}.jpg)`;
 // document.addEventListener("DOMContentLoaded", () => {
 //    document.querySelector(".logo_team").classList.add("logo_game--apearLogoTeam");
 //    document.querySelector(".logo_game").classList.add("logo_game--apearTitleGame");
 //    console.log("DOM loaded");
 // });
-window.addEventListener('load', function () {
-   document.querySelector(".logo_team").classList.add("logo_game--apearLogoTeam");
-   document.querySelector(".logo_game").classList.add("logo_game--apearTitleGame");
-   refs.bgVideo.firstElementChild.play();
-   console.log("DOM loaded");
+window.addEventListener("DOMContentLoaded", () => {
+   setTimeout(() => {
+      document.querySelector(".logo_team").classList.add("logo_game--apearLogoTeam");
+      document.querySelector(".logo_game").classList.add("logo_game--apearTitleGame");
+      console.log(refs.bgVideo);
+      refs.bgVideo.play();
+      console.log("DOM loaded");
+   }, 400);
 });
 // function checkBuffer(videoRef) {
 //    console.log(videoRef.buffered.start(0));
