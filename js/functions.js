@@ -105,7 +105,6 @@ const gamePlay = (container, playerAmount, gameType, currentLevel) => {
                      btnWrapper.children[i].classList.remove("arcade__btn--close");
                   }
                   const arcadeText = document.querySelector(".win__headline-arcade");
-                  console.log(arcadeText.textContent.split(""));
                   let result = arcadeText.textContent.split("");
                   const isNull = result.pop();
                   if (isNull === "0") result.pop();

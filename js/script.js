@@ -24,14 +24,12 @@ document.querySelector(".main").style.backgroundImage = `url(./img/bg${localStor
 //    document.querySelector(".logo_game").classList.add("logo_game--apearTitleGame");
 //    console.log("DOM loaded");
 // });
-window.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("load", () => {
    setTimeout(() => {
       document.querySelector(".logo_team").classList.add("logo_game--apearLogoTeam");
       document.querySelector(".logo_game").classList.add("logo_game--apearTitleGame");
-      console.log(refs.bgVideo);
       refs.bgVideo.play();
-      console.log("DOM loaded");
-   }, 400);
+   }, 500);
 });
 // function checkBuffer(videoRef) {
 //    console.log(videoRef.buffered.start(0));
