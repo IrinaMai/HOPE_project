@@ -47,6 +47,10 @@ export const enLanguage = {
    winModalArcadeButtonNextLevelTitle: "Next level",
    lostModalTitle: "Don`t mind try again)",
    lastWinArcadeModal: "You Completed this game!",
+   titleOurProjects: 'Check also',
+   subTitleOurProjects: 'Early access',
+   nameOurProject1: 'Trello',
+   nameOurProject2: 'Tic Taс Toe',
 };
 
 export const uaLanguage = {
@@ -98,6 +102,10 @@ export const uaLanguage = {
    winModalArcadeButtonNextLevelTitle: "Наступний рівень",
    lostModalTitle: "Не переживай, спробуй знову)",
    lastWinArcadeModal: "Ви закінчили цю гру!",
+   titleOurProjects: 'Гляньте також',
+   subTitleOurProjects: 'Ранній доступ',
+   nameOurProject1: 'Трелло',
+   nameOurProject2: 'Хрестик & Нулик',
 };
 
 export const plLanguage = {
@@ -149,6 +157,10 @@ export const plLanguage = {
    winModalArcadeButtonNextLevelTitle: "Następny poziom",
    lostModalTitle: "Nie przejmuj się, spróbuj ponownie) ",
    lastWinArcadeModal: "Ukończyłeś tę grę!",
+   titleOurProjects: 'Sprawdź także',
+   subTitleOurProjects: 'Wczesny dostęp',
+   nameOurProject1: 'Trello',
+   nameOurProject2: 'Kółko i krzyżyk',
 };
 
 export const deLanguage = {
@@ -200,6 +212,10 @@ export const deLanguage = {
    winModalArcadeButtonNextLevelTitle: "Nächste Stufe",
    lostModalTitle: "Keine Sorge, versuchen Sie es erneut)",
    lastWinArcadeModal: "Du hast dieses Spiel abgeschlossen!",
+   titleOurProjects: 'Überprüfen Sie auch',
+   subTitleOurProjects: 'Früher Zugang',
+   nameOurProject1: 'Trello',
+   nameOurProject2: 'Tic-Tac-Zehe',
 };
 
 export const jpLanguage = {
@@ -251,4 +267,8 @@ export const jpLanguage = {
    winModalArcadeButtonNextLevelTitle: "次のレベル",
    lostModalTitle: "心配しないで、もう一度やり直してください",
    lastWinArcadeModal: "このゲームを完了しました！",
+   titleOurProjects: 'また確認してください',
+   subTitleOurProjects: '早期アクセス',
+   nameOurProject1: 'Trello',
+   nameOurProject2: '○×ゲーム',
 };

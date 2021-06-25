@@ -54,6 +54,18 @@ document.querySelector(".start__btn").addEventListener("click", () => {
    document.querySelectorAll(".logo").forEach((item) => item.classList.add("hidden-modal"));
    setTimeout(() => (refs.bgVideo.style.display = "none"), 500);
 });
+
+document.querySelectorAll('.otherProjects__btn-js').forEach((item)=> {
+   item.addEventListener('click', (event) => {
+      if(event.target.parentNode.dataset.value === 'open') {
+      document.querySelector('.wrapper__projects').classList.remove('hidden-modal');
+   }
+   if(event.target.parentNode.parentNode.parentNode.dataset.value === 'close') {
+      document.querySelector('.wrapper__projects').classList.add('hidden-modal');
+   }
+   });
+});
+
 const keyCloseModal = (event) => {
    if (event.code === "Escape") {
       document.querySelector(".backdrop_authors_modal").classList.add("hidden-modal");

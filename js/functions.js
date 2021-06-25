@@ -409,6 +409,10 @@ export const changeLanguageFn = (language) => {
    document.querySelector(".win__arcade-headline").textContent = language.lastWinArcadeModal;
    document.querySelector(".win-btn-arcade").textContent = language.buttonBackToMenu;
    document.querySelector(".win-btn-arcade-replay").textContent = language.buttonReplayTitle;
+   document.querySelector('.projects__title').textContent = language.titleOurProjects;
+   document.querySelector('.projects__subtitle').textContent = language.subTitleOurProjects;
+   document.querySelector('.item__link-js1').textContent = language.nameOurProject1;
+   document.querySelector('.item__link-js2').textContent = language.nameOurProject2;
 };
 
 export const validLanguage = () => {
