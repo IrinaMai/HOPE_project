@@ -238,13 +238,13 @@
         font-size: 25px;
     }
     .authors_card {
-        width: 150px;
+        width: 125px;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         text-align: center;
         align-content: flex-start;
-        margin: 0px auto 57px auto;
+        margin: 0px auto 37px auto;
     }
     .authors_img {
         margin-bottom: 20px;
@@ -253,5 +253,39 @@
         width: 100px;
         height: 100px;
         object-fit: cover;
+    }
+}
+@media screen and (max-width: 420px) {
+    .authors_wrapper {
+        padding-top: 20px;
+    }
+    .authors-modal__close-btn {
+        top: 2%;
+        right: 0%;
+    }
+    .wrapper__projects {
+        width: 60%;
+        height: 18%;
+        top: 13%;
+        left: 32%;
+    }
+    .authors_title {
+        font-size: 19px;
+        margin-bottom: 15px;
+    }
+    .authors_card {
+        width: 100px;
+        margin: 0px auto 37px auto;
+    }
+
+    .otherProjects__btn {
+        top: 4%;
+        left: -4%;
+    }
+    .authors_footer {
+        bottom: 10px;
+    }
+    .authors_footer__text {
+        font-size: 0;
     }
 }
