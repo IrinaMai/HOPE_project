@@ -35,7 +35,6 @@ const drawCards = (amount, cards, containerRef) => {
     <img class="card__photo" src="${card.src}" alt="${card.description}" data-id='${card.id}'>
   </picture>
 </div>`;
-               // let string = `<div class="card card-${card.id}"><img data-id='${card.id}' src='./img/card-down.png' class="card__back" ><img class="card__photo" src="${card.src}" alt="${card.description}" data-id='${card.id}'></div>`;
                containerRef.insertAdjacentHTML("beforeend", string);
                setOfCards.splice(setOfCards.indexOf(random), 1);
             }
@@ -43,7 +42,6 @@ const drawCards = (amount, cards, containerRef) => {
       }
    }
 };
-// <source srcset="./img/Cansel-button@1X.webp" type="image/webp"><img src="./img/Cansel-button@1X.png" alt="close_btn" />
 const funcGlob = {};
 const state = {};
 // починає гру на заданому контейнері карток (контейнер карток, тип гри)
@@ -82,8 +80,6 @@ const gamePlay = (container, playerAmount, gameType, currentLevel) => {
    funcGlob.compareCardSingle = (event) => {
       if (state.blocked || !event.target.classList.contains("card__back")) return;
       event.target.classList.add("flip");
-      // flipRef.currentTime = 0;
-      // flipRef.play();
       event.target.parentNode.nextElementSibling.lastElementChild.classList.add("choosed");
       if (state.position === 2) {
          if (state.ref === event.target) return;
@@ -98,8 +94,6 @@ const gamePlay = (container, playerAmount, gameType, currentLevel) => {
                if (gameType === "arcade") {
                   const levelRef = +window.localStorage.getItem("level");
                   if (currentLevel !== 10) currentLevel === levelRef ? window.localStorage.setItem("level", levelRef + 1) : 1;
-
-                  // window.localStorage.setItem("level", levelRef + 1);
                   const btnWrapper = document.querySelector(".arcade__btn-wrapper");
                   for (let i = 0; i < +window.localStorage.getItem("level"); i++) {
                      btnWrapper.children[i].classList.remove("arcade__btn--close");
@@ -129,8 +123,6 @@ const gamePlay = (container, playerAmount, gameType, currentLevel) => {
    funcGlob.compareCardMulti = (event) => {
       if (state.blocked || !event.target.classList.contains("card__back")) return;
       event.target.classList.add("flip");
-      // flipRef.currentTime = 0;
-      // flipRef.play();
       event.target.parentNode.nextElementSibling.lastElementChild.classList.add("choosed");
       if (state.position === 2) {
          if (state.ref === event.target) return;
@@ -250,15 +242,11 @@ export const startGame = (cardsAmount, cards, containerRef, timerCount, playerAm
       document.querySelector(".audio__game-play").play();
       pauseBtnRef.classList.remove("hidden");
       gamePlay(containerRef, playerAmount, gameType, currentLevel);
-
-      // баг із паузою
-      // window.addEventListener("keydown", checkPause);
-   }, 5400); //5400
+   }, 5400); 
 };
 
 // закінчує гру
 const endGame = (timerCount, cardsAmount, gameType, currentLevel, event) => {
-   // window.removeEventListener("keydown", checkPause);
    pauseBtnRef.classList.remove("game__pause--multiPlayer");
    document.querySelector(".audio__little-time").pause();
    document.querySelector(".audio__little-time").currentTime = 0;

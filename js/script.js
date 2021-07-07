@@ -266,7 +266,6 @@ document.querySelector(".settings-modal__flags-wrapper").addEventListener("click
    window.localStorage.setItem("language", event.target.dataset.lang);
    validLanguage();
 });
-// pause -----------------------------------------------------------
 const pauseBtnRef = document.querySelector(".game__pause");
 const pauseModalRef = document.querySelector(".pause");
 const pauseCloseBtnRef = document.querySelector(".pause-modal__close-btn");
@@ -274,23 +273,9 @@ const pauseCloseBtnRef = document.querySelector(".pause-modal__close-btn");
 pauseCloseBtnRef.addEventListener("click", () => {
    pauseModalRef.classList.add("hidden-modal");
 });
-
-// window.addEventListener("keydown", (event) => {
-//    if (event.code === "Space") {
-//       pauseModalRef.classList.remove("hidden-modal");
-//    }
-// });
-
-// window.addEventListener("keydown", (event) => {
-//    if (event.code === "Escape") {
-//       pauseModalRef.classList.add("hidden-modal");
-//    }
-// });
-
 pauseBtnRef.addEventListener("click", () => {
    pauseModalRef.classList.remove("hidden-modal");
 });
-//----------------------------------------------------------------
 document.querySelector(".pause__resume").addEventListener("click", (event) => event.currentTarget.parentNode.parentNode.classList.add("hidden-modal"));
 document.querySelector(".pause__back-to-menu").addEventListener("click", returnToMenu);
 document.querySelector(".arcade__video").style.display = "none";

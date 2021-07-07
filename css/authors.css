@@ -126,7 +126,8 @@
 }
 
 .authors-footer__img__logo_teens {
-    border-radius: 10px;
+    /* border-radius: 10px; */
+    background-color: transparent;
     width: 100px;
     height: auto;
 }
